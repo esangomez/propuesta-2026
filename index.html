@@ -208,6 +208,94 @@ p{margin:0 0 12px; max-width:60ch}
 .modal textarea{width:100%; height:230px; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:12px; border:1.5px solid var(--linea); border-radius:12px; padding:11px; resize:vertical}
 .modal .acciones{display:flex; gap:8px; margin-top:12px; flex-wrap:wrap}
 
+
+/* ==========================================================
+   Marcos de foto
+   Recorte con la esquina viva del isotipo. La foto se encaja
+   sola: se recorta al centro, nunca se deforma.
+   ========================================================== */
+.marco{
+  position:relative; margin:0 0 16px; overflow:hidden; background:var(--papel);
+  border-radius:22px 22px 22px 6px; aspect-ratio:4/3;
+}
+.marco img{width:100%; height:100%; object-fit:cover; display:block}
+.marco .vacio{
+  width:100%; height:100%; display:grid; place-items:center; text-align:center;
+  color:var(--tinta-suave); font-size:14px; font-weight:600;
+  border:2px dashed #cbbcb9; border-radius:inherit;
+}
+.marco-alto{aspect-ratio:3/4}
+.marco-cuadrado{aspect-ratio:1/1; margin:0}
+.marco-ficha{aspect-ratio:4/3; margin:0 0 12px}
+.acciones-foto{
+  position:absolute; left:8px; right:8px; bottom:8px;
+  display:flex; gap:6px; flex-wrap:wrap;
+}
+.foto-btn{
+  font-family:var(--tipo-texto); font-size:12px; font-weight:600; cursor:pointer;
+  border:0; border-radius:999px; padding:6px 11px;
+  background:rgba(36,31,34,.82); color:#fff; backdrop-filter:blur(4px);
+}
+.foto-btn:hover{background:var(--azul)}
+.tira-fotos{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:18px}
+.tira-fotos .marco{margin:0}
+.mosaico-fotos{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:18px}
+.celda{position:relative}
+.celda .quitar{position:absolute; top:4px; right:4px; background:rgba(36,31,34,.75); color:#fff; border-radius:50%; width:26px; height:26px; line-height:1}
+.item.con-foto{flex-direction:column; gap:0}
+.item.con-foto .cuerpo{width:100%}
+
+/* ==========================================================
+   Pantallas medianas y grandes
+   El celular es la base; acá el contenido se reparte a lo ancho
+   sin que las líneas de texto se vuelvan ilegibles.
+   ========================================================== */
+@media (min-width:700px){
+  section{padding:44px 40px 46px}
+  .portada{padding:48px 40px 50px}
+  h2{font-size:32px}
+  .contactos{grid-template-columns:1fr 1fr}
+  .verano{padding:32px 30px}
+}
+
+@media (min-width:960px){
+  body{font-size:17px}
+  #doc{max-width:1080px; box-shadow:0 0 0 1px var(--linea)}
+  section{padding:56px 56px 60px}
+  h2{font-size:36px}
+  .entrada{font-size:19px}
+
+  /* portada en dos columnas: el texto a la izquierda, el isotipo grande */
+  .portada{
+    display:grid; grid-template-columns:minmax(0,1fr) auto;
+    column-gap:48px; align-items:start; padding:64px 56px 66px;
+  }
+  .portada .sello{grid-column:2; grid-row:1 / span 5; width:210px; height:210px; align-self:center; margin:0}
+  .portada h1{grid-column:1; grid-row:1; font-size:64px}
+  .portada .anio{grid-column:1; grid-row:2; font-size:96px}
+  .portada .mosaico{grid-column:1; grid-row:3}
+  .portada .verso{grid-column:1; grid-row:4; font-size:30px; max-width:22ch}
+  .portada .verso-fuente{grid-column:1; grid-row:5}
+  .portada .piezas{width:300px; right:-80px; top:-70px}
+
+  /* bloques que ganan al leerse en paralelo */
+  .grilla{display:grid; grid-template-columns:1fr 1fr; column-gap:32px}
+  .mosaico-fotos{grid-template-columns:repeat(4,1fr)}
+  .portada .marco{grid-column:2; grid-row:1 / span 5; width:270px; aspect-ratio:3/4; align-self:center; margin:0}
+  .portada .sello{grid-column:1; grid-row:6; width:96px; height:96px; margin-top:26px}
+  .lista{display:grid; grid-template-columns:1fr 1fr; column-gap:36px}
+  .lista li:nth-last-child(2):nth-child(odd){border-bottom:0}
+  .verano .lista{column-gap:30px}
+  .destacado{padding:26px 28px}
+  .cierre{padding:56px 40px 60px}
+  .cierre .frase{font-size:36px; max-width:20ch}
+}
+
+/* el texto nunca se estira más allá de lo cómodo de leer */
+@media (min-width:1140px){
+  #doc{max-width:1120px}
+}
+
 @media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
 @media print{
   .barra,.nav,.pie,.fila-edit,.quitar,.velo{display:none!important}
@@ -236,6 +324,8 @@ p{margin:0 0 12px; max-width:60ch}
   </div>
 </div>
 
+<input type="file" id="archivoFoto" accept="image/*" hidden>
+
 <div class="velo" id="velo">
   <div class="modal">
     <h3 id="modalTitulo"></h3>
@@ -259,6 +349,7 @@ const BASE = {
   diegep: "DIEGEP 8869",
   titulo: "Propuesta Académica",
   anio: "2026",
+  fotoPortada: "assets/fotos/portada.jpg",
   verso: "Una vez estudié, en un librito de yuyo, cosas que solo yo sé, y que nunca olvidaré.",
   versoObra: "Canción del Jardinero",
   versoAutor: "María Elena Walsh",
@@ -275,6 +366,7 @@ const BASE = {
     ]
   },
   equipo: {
+    foto: "assets/fotos/equipo.jpg",
     titulo: "Nuestro equipo de trabajo",
     intro: "El equipo que forma parte de la Colegio Santo Tomás se caracteriza por:",
     items: [
@@ -286,6 +378,7 @@ const BASE = {
     citaAutor: "María Montessori"
   },
   horario: {
+    foto: "assets/fotos/jornada.jpg",
     titulo: "Horario",
     destacado: "La jornada escolar dura 7 horas, de 8 a 15hs.",
     aclaracion: "Dentro de la jornada están la educación curricular obligatoria, el espacio de transición del comedor escolar y los talleres extracurriculares.",
@@ -298,11 +391,11 @@ const BASE = {
     titulo: "Materias extracurriculares",
     intro: "El turno tarde permite que los niños y niñas realicen actividades orientadas al arte, las nuevas tecnologías, la lengua extranjera, el medio ambiente y el deporte.",
     items: [
-      { titulo: "Academia de Inglés", texto: "La enseñanza del idioma es esencial en este mundo globalizado. Aprendemos inglés desde lo cotidiano, con un rol muy importante para la comunicación oral. Además, los niños rinden exámenes internacionales de la mano de PATH Examinations." },
-      { titulo: "Deportes", texto: "Los niños y niñas realizan básquet y fútbol como disciplinas deportivas, teniendo como marco el juego reglado, la competencia sana y el entrenamiento necesario para generar habilidades en cada deporte." },
-      { titulo: "Artes", texto: "Las expresiones artísticas son tan diversas como las personas; por eso, durante el turno tarde se brindan los talleres de Creatividad y Folklore." },
-      { titulo: "Informática y Robótica", texto: "Resolver problemas en situaciones cotidianas mediante el uso de la tecnología es el principal objetivo de este taller, que pone en juego la programación, la robótica y la impresión 3D." },
-      { titulo: "Huerta", texto: "Los recursos naturales son parte fundamental de nuestra vida: los niños y niñas realizan producción de alimentos por medio de la huerta escolar." }
+      { foto: "assets/fotos/ingles.jpg", titulo: "Academia de Inglés", texto: "La enseñanza del idioma es esencial en este mundo globalizado. Aprendemos inglés desde lo cotidiano, con un rol muy importante para la comunicación oral. Además, los niños rinden exámenes internacionales de la mano de PATH Examinations." },
+      { foto: "assets/fotos/deportes.jpg", titulo: "Deportes", texto: "Los niños y niñas realizan básquet y fútbol como disciplinas deportivas, teniendo como marco el juego reglado, la competencia sana y el entrenamiento necesario para generar habilidades en cada deporte." },
+      { foto: "assets/fotos/artes.jpg", titulo: "Artes", texto: "Las expresiones artísticas son tan diversas como las personas; por eso, durante el turno tarde se brindan los talleres de Creatividad y Folklore." },
+      { foto: "assets/fotos/robotica.jpg", titulo: "Informática y Robótica", texto: "Resolver problemas en situaciones cotidianas mediante el uso de la tecnología es el principal objetivo de este taller, que pone en juego la programación, la robótica y la impresión 3D." },
+      { foto: "assets/fotos/huerta.jpg", titulo: "Huerta", texto: "Los recursos naturales son parte fundamental de nuestra vida: los niños y niñas realizan producción de alimentos por medio de la huerta escolar." }
     ]
   },
   comedor: {
@@ -316,6 +409,7 @@ const BASE = {
   uniforme: {
     titulo: "Uniforme escolar",
     texto: "El uniforme forma parte de nuestra identidad como escuela, además de ser de excelente calidad, con un diseño moderno y cómodo para que los niños y niñas realicen actividades escolares.",
+    fotos: ["assets/fotos/uniforme-1.jpg", "assets/fotos/uniforme-2.jpg"],
     prendas: ["Chomba", "Pantalón", "Campera", "Buzo", "Remera", "Bermuda"]
   },
   materiales: {
@@ -396,6 +490,13 @@ const BASE = {
     horario: "9 a 12hs",
     nota: "Para todas las edades"
   },
+  galeria: {
+    titulo: "La escuela por dentro",
+    intro: "Momentos de la vida cotidiana en el Santo Tomás.",
+    fotos: ["assets/fotos/galeria-1.jpg", "assets/fotos/galeria-2.jpg",
+            "assets/fotos/galeria-3.jpg", "assets/fotos/galeria-4.jpg"]
+  },
+
   cierre: { frase: "Lo esencial es invisible a los ojos", autor: "Antoine de Saint-Exupéry" }
 };
 
@@ -454,7 +555,26 @@ const agregarBtn = (ruta, etiqueta) => `<div class="fila-edit"><button class="mi
 const quitarBtn  = (ruta, i) => `<button class="quitar" data-quitar="${ruta}" data-i="${i}" aria-label="Quitar">×</button>`;
 const parrafos   = (ruta, arr, clase="") => arr.map((_,i)=>`<div class="item">${ed(ruta+"."+i,"p",i===0?clase:"")}${quitarBtn(ruta,i)}</div>`).join("");
 const puntos     = (ruta, arr) => `<ul class="lista">${arr.map((_,i)=>`<li><span class="tic"></span><div style="flex:1">${ed(ruta+"."+i,"span")}</div>${quitarBtn(ruta,i)}</li>`).join("")}</ul>`;
-const fichas     = (ruta, arr) => arr.map((_,i)=>`<div class="item"><span class="punto"></span><div class="cuerpo">${ed(ruta+"."+i+".titulo","h3")}${ed(ruta+"."+i+".texto","p")}</div>${quitarBtn(ruta,i)}</div>`).join("");
+const fichas     = (ruta, arr) => `<div class="grilla">` + arr.map((_,i)=>{
+  const f = marco(ruta+"."+i+".foto","marco-ficha");
+  return `<div class="item ${f?"con-foto":""}">${f || '<span class="punto"></span>'}<div class="cuerpo">${ed(ruta+"."+i+".titulo","h3")}${ed(ruta+"."+i+".texto","p")}</div>${quitarBtn(ruta,i)}</div>`;
+}).join("") + `</div>`;
+
+
+/* un marco de foto: muestra la imagen y, en modo edición, deja cambiarla */
+function marco(ruta, clase="", borrable=true){
+  const src = leer(ruta);
+  if(!src && !editando) return "";
+  const acciones = editando ? `<div class="acciones-foto">
+      <button class="foto-btn" data-subir="${ruta}">${src?"Cambiar foto":"Agregar foto"}</button>
+      <button class="foto-btn" data-urlfoto="${ruta}">Enlace</button>
+      ${src && borrable ? `<button class="foto-btn" data-quitarfoto="${ruta}">Quitar</button>` : ""}
+    </div>` : "";
+  return `<figure class="marco ${clase}">
+    ${src ? `<img src="${esc(src)}" alt="" loading="lazy">` : `<div class="vacio">Sin foto</div>`}
+    ${acciones}
+  </figure>`;
+}
 
 function render(){
   const d = datos;
@@ -463,6 +583,7 @@ function render(){
   <div class="portada">
     <img class="piezas" src="assets/isotipo.svg" alt="">
     <img class="sello" src="assets/isotipo.svg" alt="Isotipo del Colegio Santo Tomás">
+    ${marco("fotoPortada","marco-alto")}
     <h1>${ed("titulo","span")}</h1>
     <div class="anio">${ed("anio","span")}</div>
     <div class="mosaico">
@@ -488,6 +609,7 @@ function render(){
   <section id="s-equipo" style="--acento:var(--violeta)">
     <h2>${ed("equipo.titulo")}</h2><div class="subrayado"></div>
     ${ed("equipo.intro","p","entrada")}
+    ${marco("equipo.foto")}
     ${fichas("equipo.items", d.equipo.items)}
     ${agregarBtn("equipo.items","característica")}
     <div class="destacado" style="--acento:var(--azul)">
@@ -500,6 +622,7 @@ function render(){
   <section class="tinte" id="s-jornada" style="--acento:var(--azul)">
     <h2>${ed("horario.titulo")}</h2><div class="subrayado"></div>
     <div class="destacado">${ed("horario.destacado","h3")}${ed("horario.aclaracion","p")}</div>
+    ${marco("horario.foto")}
     ${parrafos("horario.parrafos", d.horario.parrafos)}
     ${agregarBtn("horario.parrafos","párrafo")}
     <div style="--acento:var(--verde)">
@@ -521,6 +644,7 @@ function render(){
   <section class="tinte" id="s-utiles" style="--acento:var(--celeste)">
     <h2>${ed("uniforme.titulo")}</h2><div class="subrayado"></div>
     ${ed("uniforme.texto","p")}
+    <div class="tira-fotos">${d.uniforme.fotos.map((_,i)=>marco("uniforme.fotos."+i,"marco-alto")).join("")}</div>
     <div class="chips">${d.uniforme.prendas.map((_,i)=>`<span class="chip"><i></i>${ed("uniforme.prendas."+i)}${quitarBtn("uniforme.prendas",i)}</span>`).join("")}</div>
     ${agregarBtn("uniforme.prendas","prenda")}
     <div style="--acento:var(--violeta)">
@@ -580,6 +704,16 @@ function render(){
     </div>
   </section>`;
 
+  const galeria = `
+  <section id="s-galeria" style="--acento:var(--celeste)">
+    <h2>${ed("galeria.titulo")}</h2><div class="subrayado"></div>
+    ${ed("galeria.intro","p")}
+    <div class="mosaico-fotos">
+      ${d.galeria.fotos.map((_,i)=>`<div class="celda">${marco("galeria.fotos."+i,"marco-cuadrado",false)}${quitarBtn("galeria.fotos",i)}</div>`).join("")}
+    </div>
+    ${agregarBtn("galeria.fotos","foto")}
+  </section>`;
+
   const cierre = `
   <section id="s-verano" class="tinte">
     <div class="verano">
@@ -600,9 +734,9 @@ function render(){
     <p class="pie-datos">${ed("escuela")} · ${ed("nivel")}<br>${ed("barrio")} · ${ed("diegep")}</p>
   </div>`;
 
-  $("#app").innerHTML = portada + escuela + jornada + utiles + aranceles + contacto + cierre;
+  $("#app").innerHTML = portada + escuela + jornada + utiles + aranceles + contacto + galeria + cierre;
   $("#marcaTop").innerHTML = "<b>" + esc(d.escuela) + "</b><span>" + esc(d.titulo) + " " + esc(d.anio) + "</span>";
-  $("#nav").innerHTML = [["s-escuela","La escuela"],["s-equipo","Equipo"],["s-jornada","Jornada"],["s-talleres","Talleres"],["s-utiles","Uniforme"],["s-aranceles","Aranceles"],["s-docs","Documentación"],["s-inscripcion","Inscripción"],["s-verano","Verano"]]
+  $("#nav").innerHTML = [["s-escuela","La escuela"],["s-equipo","Equipo"],["s-jornada","Jornada"],["s-talleres","Talleres"],["s-utiles","Uniforme"],["s-aranceles","Aranceles"],["s-docs","Documentación"],["s-inscripcion","Inscripción"],["s-galeria","Fotos"],["s-verano","Verano"]]
     .map(([id,t])=>`<a href="#${id}">${t}</a>`).join("");
 }
 
@@ -684,6 +818,71 @@ $("#btnReset").addEventListener("click", ()=>modal({
   valor:"", boton:"Restablecer todo",
   alConfirmar: ()=>{ datos = JSON.parse(JSON.stringify(BASE)); render(); guardar(); $("#velo").classList.remove("abierto"); }
 }));
+
+
+/* ---------- fotos ----------
+   Las imágenes que se suben desde el dispositivo se achican antes de
+   guardarse: una foto de celular pesa varios megas y el navegador solo
+   reserva unos pocos para toda la propuesta. */
+let rutaFoto = null;
+
+function comprimir(archivo, ladoMax = 1200, calidad = 0.72){
+  return new Promise((resolver, rechazar)=>{
+    const lector = new FileReader();
+    lector.onload = () => {
+      const img = new Image();
+      img.onload = () => {
+        let {width:a, height:b} = img;
+        const escala = Math.min(1, ladoMax / Math.max(a, b));
+        a = Math.round(a * escala); b = Math.round(b * escala);
+        const lienzo = document.createElement("canvas");
+        lienzo.width = a; lienzo.height = b;
+        lienzo.getContext("2d").drawImage(img, 0, 0, a, b);
+        resolver(lienzo.toDataURL("image/jpeg", calidad));
+      };
+      img.onerror = () => rechazar(new Error("imagen ilegible"));
+      img.src = lector.result;
+    };
+    lector.onerror = () => rechazar(new Error("archivo ilegible"));
+    lector.readAsDataURL(archivo);
+  });
+}
+
+document.addEventListener("click", e=>{
+  const subir = e.target.closest("[data-subir]");
+  if(subir){ rutaFoto = subir.dataset.subir; $("#archivoFoto").click(); return; }
+
+  const quitarF = e.target.closest("[data-quitarfoto]");
+  if(quitarF){ escribir(quitarF.dataset.quitarfoto, ""); render(); guardar(); return; }
+
+  const enlace = e.target.closest("[data-urlfoto]");
+  if(enlace){
+    const ruta = enlace.dataset.urlfoto;
+    modal({
+      titulo:"Foto desde un enlace",
+      texto:"Pegá la dirección de una imagen que ya esté publicada en internet. También sirve la ruta de un archivo del repositorio, por ejemplo assets/fotos/patio.jpg",
+      valor: leer(ruta) && !String(leer(ruta)).startsWith("data:") ? leer(ruta) : "",
+      boton:"Usar esta foto",
+      alConfirmar: ()=>{
+        escribir(ruta, $("#modalCampo").value.trim());
+        render(); guardar(); $("#velo").classList.remove("abierto");
+      }
+    });
+  }
+});
+
+$("#archivoFoto").addEventListener("change", async e=>{
+  const archivo = e.target.files[0];
+  if(!archivo || !rutaFoto) return;
+  estado("Preparando la foto…");
+  try{
+    escribir(rutaFoto, await comprimir(archivo));
+    render(); guardar();
+  }catch(err){
+    estado("Ese archivo no se pudo leer como imagen");
+  }
+  e.target.value = "";
+});
 
 (async ()=>{ await cargar(); render(); })();
 </script>
