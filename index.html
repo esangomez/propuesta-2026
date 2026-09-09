@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Propuesta Académica 2026 — Colegio Santo Tomás</title>
-<meta name="description" content="Propuesta Académica 2026 del Colegio Santo Tomás. Belén de Escobar, Buenos Aires.">
+<title>Propuesta Académica 2027 — Colegio Santo Tomás</title>
+<meta name="description" content="Propuesta Académica 2027 del Colegio Santo Tomás. Nivel Primario y Nivel Secundario. Belén de Escobar, Buenos Aires.">
 <meta name="theme-color" content="#00669c">
 <link rel="icon" href="assets/isotipo.svg">
-<meta property="og:title" content="Propuesta Académica 2026 — Colegio Santo Tomás">
-<meta property="og:description" content="Jornada de 8 a 15hs, talleres extracurriculares, aranceles e inscripción 2026.">
+<meta property="og:title" content="Propuesta Académica 2027 — Colegio Santo Tomás">
+<meta property="og:description" content="Nivel Primario y Nivel Secundario: horarios, materias, aranceles e inscripción 2027.">
 <meta property="og:image" content="assets/isotipo.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Livvic:ital,wght@0,300;0,400;0,600;0,700;1,400&family=M+PLUS+Rounded+1c:wght@700;800&family=Caveat+Brush&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,400;1,9..144,600&family=Livvic:ital,wght@0,300;0,400;0,600;0,700;1,400&family=M+PLUS+Rounded+1c:wght@700;800&family=Caveat+Brush&display=swap" rel="stylesheet">
 
 <style>
 /* ==========================================================
@@ -95,12 +95,6 @@ body{
 }
 .mosaico{display:flex; gap:6px; margin:22px 0}
 .mosaico i{height:9px; border-radius:3px; flex:1}
-.verso{
-  font-family:var(--tipo-mano); font-size:26px; line-height:1.25; color:var(--violeta);
-  max-width:18ch; margin:0;
-}
-.verso-fuente{margin-top:10px; font-size:13px; color:var(--tinta-suave)}
-.verso-fuente b{display:block; color:var(--tinta); font-weight:600}
 
 /* ---------- secciones ---------- */
 section{padding:34px 22px 36px; position:relative; background:var(--blanco)}
@@ -209,6 +203,40 @@ p{margin:0 0 12px; max-width:60ch}
 .modal .acciones{display:flex; gap:8px; margin-top:12px; flex-wrap:wrap}
 
 
+
+/* ==========================================================
+   Cita de apertura
+   Es larga: necesita su propia banda y un cuerpo legible.
+   ========================================================== */
+.banda-cita{background:var(--violeta); color:#fff; padding:38px 22px 34px; position:relative}
+.banda-cita .comilla{
+  font-family:var(--tipo-titulo); font-weight:900; font-size:96px; line-height:.6;
+  color:rgba(255,255,255,.28); display:block; margin-bottom:-6px;
+}
+.banda-cita blockquote{
+  margin:0; font-family:var(--tipo-titulo); font-style:italic; font-weight:400;
+  font-size:20px; line-height:1.45; max-width:44ch;
+}
+.banda-cita figcaption{margin-top:18px; font-size:14px; line-height:1.5; color:rgba(255,255,255,.82)}
+.banda-cita figcaption b{display:block; font-weight:600; color:#fff}
+
+/* ==========================================================
+   Selector de nivel
+   ========================================================== */
+.selector{background:var(--papel); padding:24px 22px 26px; border-bottom:1px solid var(--linea)}
+.selector .rotulo{font-size:14.5px; color:var(--tinta-suave); margin:0 0 12px; max-width:46ch}
+.selector .botones{display:flex; gap:10px; flex-wrap:wrap}
+.nivel-btn{
+  flex:1; min-width:150px; cursor:pointer; font-family:var(--tipo-texto);
+  font-size:16px; font-weight:700; padding:14px 18px; text-align:left;
+  border:2px solid var(--linea); background:#fff; color:var(--tinta-suave);
+  border-radius:15px 15px 15px 4px;
+}
+.nivel-btn small{display:block; font-weight:400; font-size:12.5px; opacity:.75}
+.nivel-btn:hover{border-color:var(--azul)}
+.nivel-btn.activo{background:var(--azul); border-color:var(--azul); color:#fff}
+.nivel-btn.activo small{opacity:.9}
+
 /* ==========================================================
    Marcos de foto
    Recorte con la esquina viva del isotipo. La foto se encaja
@@ -270,19 +298,19 @@ p{margin:0 0 12px; max-width:60ch}
     display:grid; grid-template-columns:minmax(0,1fr) auto;
     column-gap:48px; align-items:start; padding:64px 56px 66px;
   }
-  .portada .sello{grid-column:2; grid-row:1 / span 5; width:210px; height:210px; align-self:center; margin:0}
   .portada h1{grid-column:1; grid-row:1; font-size:64px}
   .portada .anio{grid-column:1; grid-row:2; font-size:96px}
-  .portada .mosaico{grid-column:1; grid-row:3}
-  .portada .verso{grid-column:1; grid-row:4; font-size:30px; max-width:22ch}
-  .portada .verso-fuente{grid-column:1; grid-row:5}
+  .portada .sello{grid-column:1; grid-row:3; width:104px; height:104px; margin:18px 0 0}
+  .portada .mosaico{grid-column:1; grid-row:4}
   .portada .piezas{width:300px; right:-80px; top:-70px}
 
   /* bloques que ganan al leerse en paralelo */
   .grilla{display:grid; grid-template-columns:1fr 1fr; column-gap:32px}
+  .banda-cita{padding:52px 56px 46px}
+  .banda-cita blockquote{font-size:26px}
+  .selector{padding:30px 56px 32px}
   .mosaico-fotos{grid-template-columns:repeat(4,1fr)}
-  .portada .marco{grid-column:2; grid-row:1 / span 5; width:270px; aspect-ratio:3/4; align-self:center; margin:0}
-  .portada .sello{grid-column:1; grid-row:6; width:96px; height:96px; margin-top:26px}
+  .portada .marco{grid-column:2; grid-row:1 / span 4; width:280px; aspect-ratio:3/4; align-self:center; margin:0}
   .lista{display:grid; grid-template-columns:1fr 1fr; column-gap:36px}
   .lista li:nth-last-child(2):nth-child(odd){border-bottom:0}
   .verano .lista{column-gap:30px}
@@ -343,147 +371,281 @@ p{margin:0 0 12px; max-width:60ch}
    1. CONTENIDO — todo el texto de la propuesta vive acá
    ============================================================ */
 const BASE = {
-  escuela: "Colegio Santo Tomás",
-  nivel: "Escuela Primaria",
-  barrio: "Barrio Lambertuchi · Belén de Escobar",
-  diegep: "DIEGEP 8869",
-  titulo: "Propuesta Académica",
-  anio: "2026",
-  fotoPortada: "assets/fotos/portada.jpg",
-  verso: "Una vez estudié, en un librito de yuyo, cosas que solo yo sé, y que nunca olvidaré.",
-  versoObra: "Canción del Jardinero",
-  versoAutor: "María Elena Walsh",
-
-  mision: {
-    titulo: "Nuestra misión: educar para la diversidad",
-    parrafos: [
-      "Los profesionales de la educación que formamos parte del Colegio Santo Tomás tenemos como misión una sociedad más justa y solidaria; utilizando como valores la diversidad, el trabajo territorial y el desarrollo de las comunidades; respetando y fomentando el conocimiento de las distintas expresiones culturales.",
-      "Entendemos que la calidad educativa no es una sola cosa: se compone de tres calidades que no se pueden separar."
+  "escuela": "Colegio Santo Tomás",
+  "barrio": "Barrio Lambertuchi · Belén de Escobar",
+  "titulo": "Propuesta Académica",
+  "anio": "2027",
+  "fotoPortada": "assets/fotos/portada.jpg",
+  "verso": "\"La innovación educativa se construye sobre lo que ya hacemos y tenemos, valorando aquello que es importante conservar. Y que, al mismo tiempo, nos propone estirarnos un poco más lejos, buscando que la escuela se transforme en un espacio propicio para la aventura del pensamiento\"",
+  "versoObra": "Las Preguntas Educativas entran a las aulas",
+  "versoAutor": "Melina Furman y María Emilia Larsen",
+  "mision": {
+    "titulo": "Nuestra misión: educación de calidad",
+    "parrafos": [
+      "Los profesionales de la educación que formamos parte del Colegio Santo Tomás tenemos como misión brindar una Educación de Calidad donde el bienestar en comunidad, las distintas formas de enseñar y aprender, los recursos didácticos y las tecnologías educativas son condición necesaria para lograr más y mejores aprendizajes."
     ]
   },
-
-  calidades: {
-    titulo: "Las tres calidades",
-    items: [
-      { titulo: "La calidad humana", texto: "El desarrollo del estudiante no es solo académico: también es emocional, social, ético y ciudadano. Cuidamos el clima de convivencia, prevenimos el acoso escolar y sostenemos el bienestar de estudiantes y docentes." },
-      { titulo: "La calidad de los aprendizajes", texto: "Miramos los resultados, pero también los procesos: la eficacia de los métodos de enseñanza, la evaluación formativa, y el desarrollo del pensamiento crítico, la resolución de problemas, la creatividad y la colaboración." },
-      { titulo: "La calidad de los recursos", texto: "La selección, la formación y el bienestar del equipo docente, la infraestructura y las herramientas digitales son las que sostienen todo lo anterior." }
+  "calidades": {
+    "titulo": "Las tres calidades",
+    "items": [
+      {
+        "titulo": "La calidad humana",
+        "texto": "El desarrollo del estudiante no es solo académico: también es emocional, social, ético y ciudadano. Cuidamos el clima de convivencia, prevenimos el acoso escolar y sostenemos el bienestar de estudiantes y docentes."
+      },
+      {
+        "titulo": "La calidad de los aprendizajes",
+        "texto": "Miramos los resultados, pero también los procesos: la eficacia de los métodos de enseñanza, la evaluación formativa, y el desarrollo del pensamiento crítico, la resolución de problemas, la creatividad y la colaboración."
+      },
+      {
+        "titulo": "La calidad de los recursos",
+        "texto": "La selección, la formación y el bienestar del equipo docente, la infraestructura y las herramientas digitales son las que sostienen todo lo anterior."
+      }
     ]
   },
-  compromiso: {
-    titulo: "Nuestro compromiso",
-    parrafos: [
+  "compromiso": {
+    "titulo": "Nuestro compromiso",
+    "parrafos": [
       "Los docentes y profesionales que formamos parte del Colegio Santo Tomás nos comprometemos a desplegar procesos educativos que favorezcan la inclusión de niños y niñas en su diversidad, considerando todas sus diferencias, por medio de acciones educativas enmarcadas en los valores fundamentales de igualdad y libertad.",
-      "A su vez, buscamos generar prácticas institucionales que promuevan la solidaridad y el respeto mutuo, que posibiliten la aproximación de los niños y niñas a la heterogeneidad, para asegurar el éxito en los aprendizajes de todos nuestros y nuestras estudiantes.",
-      "Adecuamos las tareas a lo que cada estudiante necesita. Trabajamos con el Diseño Universal para el Aprendizaje: una misma propuesta puede recorrerse por caminos distintos, y eso no es una excepción sino nuestra forma habitual de enseñar."
+      "A su vez, buscamos generar prácticas institucionales que promuevan la solidaridad y el respeto mutuo, que posibiliten la aproximación de los niños y niñas a la heterogeneidad, para asegurar el éxito en los aprendizajes de todos nuestros y nuestras estudiantes."
     ]
   },
-  pedagogia: {
-    titulo: "Cómo enseñamos",
-    intro: "Nuestra propuesta pedagógica se apoya en cuatro decisiones.",
-    items: [
-      { titulo: "El bienestar escolar es la base", texto: "Nadie aprende bien donde no se siente cuidado. El clima de convivencia no es un tema aparte del aprendizaje: es su condición. La educación emocional es, además, un área que se enseña, con objetivos propios en cada año." },
-      { titulo: "Una tarea para cada estudiante", texto: "Personalizamos y adecuamos las propuestas según lo que cada uno necesita, siguiendo el Diseño Universal para el Aprendizaje." },
-      { titulo: "Tecnología con sentido", texto: "Las herramientas digitales cambian las formas de enseñar y de aprender. La programación, la robótica, la impresión 3D y el aula virtual forman parte del trabajo cotidiano, no de una clase suelta." },
-      { titulo: "Aprender haciendo", texto: "La experimentación y la vivencia son la manera de comprobar que lo aprendido sirve. De ahí el trabajo por proyectos, la huerta y las prácticas de laboratorio." }
+  "pedagogia": {
+    "titulo": "Cómo enseñamos",
+    "intro": "Nuestra propuesta pedagógica se apoya en cuatro decisiones.",
+    "items": [
+      {
+        "titulo": "El bienestar escolar es la base",
+        "texto": "Nadie aprende bien donde no se siente cuidado. El clima de convivencia no es un tema aparte del aprendizaje: es su condición. La educación emocional es, además, un área que se enseña, con objetivos propios en cada año."
+      },
+      {
+        "titulo": "Una tarea para cada estudiante",
+        "texto": "Personalizamos y adecuamos las propuestas según lo que cada uno necesita."
+      },
+      {
+        "titulo": "Tecnología con sentido",
+        "texto": "Las herramientas digitales cambian las formas de enseñar y de aprender. La programación, la robótica, la impresión 3D y el aula virtual forman parte del trabajo cotidiano, no de una clase suelta."
+      },
+      {
+        "titulo": "Aprender haciendo",
+        "texto": "La experimentación y la vivencia son la manera de comprobar que lo aprendido sirve. Las salidas educativas, los eventos y actos escolares y las muestras artísticas son parte fundamental del año escolar."
+      }
     ]
   },
-
-  recursos: {
-    titulo: "Recursos para aprender",
-    intro: "Con qué cuentan los estudiantes dentro del aula y fuera de ella.",
-    items: [
-      { titulo: "En cada aula", texto: "Televisor de 50 pulgadas, pizarra blanca, manuales escolares e infografías de los temas que se están trabajando." },
-      { titulo: "Equipamiento digital", texto: "Notebooks para el trabajo en clase y Google Classroom como aula virtual, donde quedan las consignas y las entregas." },
-      { titulo: "Robótica e impresión 3D", texto: "Kits de robótica del programa Smart Team e impresora 3D: los estudiantes programan, diseñan e imprimen sus propios objetos." },
-      { titulo: "Para experimentar", texto: "Microscopio digital, huerta escolar y elementos de educación física." }
+  "recursos": {
+    "titulo": "Recursos para aprender",
+    "intro": "Con qué cuentan los estudiantes dentro del aula y fuera de ella.",
+    "items": [
+      {
+        "titulo": "En cada aula",
+        "texto": "Televisor de 50 pulgadas, pizarra blanca, manuales escolares e infografías de los temas que se están trabajando."
+      },
+      {
+        "titulo": "Equipamiento digital",
+        "texto": "Notebooks para el trabajo en clase y Google Classroom como aula virtual, donde quedan las consignas y las entregas."
+      },
+      {
+        "titulo": "Robótica e impresión 3D",
+        "texto": "Kits de robótica del programa Smart Team e impresora 3D: los estudiantes programan, diseñan e imprimen sus propios objetos."
+      },
+      {
+        "titulo": "Para experimentar",
+        "texto": "Microscopio digital, huerta escolar y elementos de educación física."
+      }
     ]
   },
-
-  equipo: {
-    foto: "assets/fotos/equipo.jpg",
-    titulo: "Nuestro equipo de trabajo",
-    intro: "Detrás de cada curso hay un equipo. El trato cordial y el acuerdo con las familias son la base de todo lo demás. Estos son los adultos que acompañan a los estudiantes cada día:",
-    items: [
-      { titulo: "El docente a cargo", texto: "Planifica, sostiene las trayectorias y comparte un registro diario de lo trabajado. Por el contacto cotidiano, suele ser el primero en advertir cuando algo pasa." },
-      { titulo: "La preceptora", texto: "Acompaña entradas, recreos, comedor y salidas. Es el vínculo diario entre estudiantes, docentes y familias, y colabora en el aula cuando hace falta." },
-      { titulo: "El Equipo de Orientación Escolar", texto: "Observa las clases, tiene encuentros con estudiantes y docentes, participa de las reuniones con las familias y acompaña las trayectorias que necesitan un recorrido propio." },
-      { titulo: "El asesor pedagógico", texto: "Trabaja sobre la planificación anual y mensual de todos los años y acompaña el diseño del proyecto institucional." },
-      { titulo: "El equipo directivo", texto: "Supervisa el trabajo docente, acompaña la jornada, media en los conflictos y recibe a las familias." },
-      { titulo: "Formación permanente", texto: "Los docentes que se incorporan observan clases de colegas con más experiencia, trabajan junto a un docente tutor y tienen entrevistas mensuales de seguimiento." }
+  "equipo": {
+    "foto": "assets/fotos/equipo.jpg",
+    "titulo": "Nuestro equipo de trabajo",
+    "intro": "El equipo que forma parte del Colegio Santo Tomás se caracteriza por:",
+    "items": [
+      {
+        "titulo": "El trato cordial entre docentes y estudiantes",
+        "texto": "Consideramos que para cualquier proceso de enseñanza y aprendizaje es necesario un vínculo sostenido entre el contenido, el estudiante, sus docentes y la familia a la cuál pertenece."
+      },
+      {
+        "titulo": "Ser contemplativos ante las sugerencias de las familias",
+        "texto": "Es fundamental para el desarrollo del niño/a el acuerdo entre la familia y la escuela."
+      },
+      {
+        "titulo": "El profesionalismo a la hora de la enseñanza",
+        "texto": "Somos docentes que buscamos la formación profesional continua para lograr prácticas educativas modernas, personalizadas y efectivas."
+      },
+      {
+        "titulo": "La comunicación asertiva",
+        "texto": "Creemos que comunicar las situaciones a la persona correcta en el momento indicado colaboran a reducir las controversias y a generar un mejor clima entre los miembros de la comunidad escolar."
+      }
     ],
-    cita: "No me sigan a mí, sigan al niño",
-    citaAutor: "María Montessori"
+    "cita": "No me sigan a mí, sigan al niño",
+    "citaAutor": "María Montessori"
   },
-  horario: {
-    foto: "assets/fotos/jornada.jpg",
-    titulo: "Horario",
-    destacado: "La jornada escolar dura 7 horas, de 8 a 15hs.",
-    aclaracion: "Dentro de la jornada están la educación curricular obligatoria, el espacio de transición del comedor escolar y los talleres extracurriculares.",
-    parrafos: [
-      "El turno tarde es un espacio pensado para las familias que necesitan una carga horaria escolar de mayor duración.",
-      "El objetivo no es solamente asistir más tiempo a la escuela, sino realizar en el mismo espacio actividades deportivas, recreativas y artísticas junto a otros niños y niñas."
-    ]
+  "niveles": {
+    "primaria": {
+      "nombre": "Nivel Primario",
+      "diegep": "DIEGEP 8869",
+      "horario": {
+        "foto": "assets/fotos/jornada.jpg",
+        "titulo": "Horario",
+        "destacado": "La jornada escolar dura 7 horas, de 8 a 15hs.",
+        "aclaracion": "Dentro de la jornada están la educación curricular obligatoria, el espacio de transición del comedor escolar y las asignaturas extracurriculares.",
+        "parrafos": [
+          "El objetivo de una Jornada Completa no es solamente asistir más tiempo a la escuela, sino realizar en el mismo espacio actividades deportivas, recreativas y artísticas junto a otros niños y niñas.",
+          "Durante el turno mañana, los estudiantes asisten a las materias curriculares obligatorias del Nivel Primario"
+        ]
+      },
+      "curriculares": {
+        "titulo": "Materias curriculares",
+        "intro": "Las áreas obligatorias del Nivel Primario, que se cursan durante el turno mañana.",
+        "lista": [
+          "Prácticas del Lenguaje",
+          "Matemática",
+          "Ciencias Naturales",
+          "Ciencias Sociales",
+          "Educación Física",
+          "Educación Artística",
+          "Inglés",
+          "Tecnología",
+          "Educación Emocional"
+        ]
+      },
+      "extracurriculares": {
+        "titulo": "Materias extracurriculares",
+        "intro": "El turno tarde permite que los niños y niñas realicen actividades orientadas al arte, las nuevas tecnologías, la lengua extranjera, el medio ambiente y el deporte.",
+        "items": [
+          {
+            "foto": "assets/fotos/ingles.jpg",
+            "titulo": "Academia de Inglés",
+            "texto": "La enseñanza del idioma es esencial en este mundo globalizado. Aprendemos inglés desde lo cotidiano, con un rol muy importante para la comunicación oral. Además, los niños rinden exámenes internacionales de la mano de PATH Examinations."
+          },
+          {
+            "foto": "assets/fotos/deportes.jpg",
+            "titulo": "Deportes",
+            "texto": "Los niños y niñas realizan básquet y fútbol como disciplinas deportivas, teniendo como marco el juego reglado, la competencia sana y el entrenamiento necesario para generar habilidades en cada deporte."
+          },
+          {
+            "foto": "assets/fotos/artes.jpg",
+            "titulo": "Artes",
+            "texto": "Las expresiones artísticas son tan diversas como las personas; por eso, durante el turno tarde se brindan los talleres de Creatividad y Folklore."
+          },
+          {
+            "foto": "assets/fotos/robotica.jpg",
+            "titulo": "Informática y Robótica",
+            "texto": "Resolver problemas en situaciones cotidianas mediante el uso de la tecnología es el principal objetivo de este taller, que pone en juego la programación, la robótica y la impresión 3D."
+          },
+          {
+            "foto": "assets/fotos/huerta.jpg",
+            "titulo": "Huerta",
+            "texto": "Los recursos naturales son parte fundamental de nuestra vida: los niños y niñas realizan producción de alimentos por medio de la huerta escolar."
+          }
+        ]
+      },
+      "informe": {
+        "titulo": "Cómo informamos los aprendizajes",
+        "intro": "Las familias reciben información sobre la trayectoria de su hijo o hija a lo largo de todo el año.",
+        "items": [
+          "Cada área define hasta tres objetivos por año, que se comunican al comienzo del ciclo.",
+          "Los objetivos no se ponderan entre sí: ninguna materia vale más que otra.",
+          "Al cierre del año se emite el RITE, el registro provincial de trayectoria educativa."
+        ]
+      }
+    },
+    "secundaria": {
+      "nombre": "Nivel Secundario",
+      "diegep": "DIEGEP 9285",
+      "horario": {
+        "titulo": "Horario",
+        "destacado": "A completar: duración de la jornada del Nivel Secundario.",
+        "aclaracion": "A completar: qué incluye la jornada.",
+        "parrafos": [
+          "A completar: cómo se organiza el día en el Nivel Secundario."
+        ]
+      },
+      "curriculares": {
+        "titulo": "Materias curriculares",
+        "intro": "Las áreas obligatorias del Nivel Secundario.",
+        "lista": [
+          "Prácticas del Lenguaje",
+          "Matemática",
+          "Ciencias Naturales",
+          "Ciencias Sociales",
+          "Educación Física",
+          "Educación Artística",
+          "Inglés",
+          "Tecnología",
+          "Educación Emocional"
+        ]
+      },
+      "extracurriculares": {
+        "titulo": "Materias extracurriculares",
+        "intro": "A completar: propuesta extracurricular del Nivel Secundario.",
+        "items": []
+      },
+      "informe": {
+        "titulo": "Cómo informamos los aprendizajes",
+        "intro": "A completar: régimen de calificación e informes del Nivel Secundario.",
+        "items": [
+          "A completar."
+        ]
+      }
+    }
   },
-  extra: {
-    titulo: "Materias extracurriculares",
-    intro: "El turno tarde permite que los niños y niñas realicen actividades orientadas al arte, las nuevas tecnologías, la lengua extranjera, el medio ambiente y el deporte.",
-    items: [
-      { foto: "assets/fotos/ingles.jpg", titulo: "Academia de Inglés", texto: "La enseñanza del idioma es esencial en este mundo globalizado. Aprendemos inglés desde lo cotidiano, con un rol muy importante para la comunicación oral. Además, los niños rinden exámenes internacionales de la mano de PATH Examinations." },
-      { foto: "assets/fotos/deportes.jpg", titulo: "Deportes", texto: "Los niños y niñas realizan básquet y fútbol como disciplinas deportivas, teniendo como marco el juego reglado, la competencia sana y el entrenamiento necesario para generar habilidades en cada deporte." },
-      { foto: "assets/fotos/artes.jpg", titulo: "Artes", texto: "Las expresiones artísticas son tan diversas como las personas; por eso, durante el turno tarde se brindan los talleres de Creatividad y Folklore." },
-      { foto: "assets/fotos/robotica.jpg", titulo: "Informática y Robótica", texto: "Resolver problemas en situaciones cotidianas mediante el uso de la tecnología es el principal objetivo de este taller, que pone en juego la programación, la robótica y la impresión 3D." },
-      { foto: "assets/fotos/huerta.jpg", titulo: "Huerta", texto: "Los recursos naturales son parte fundamental de nuestra vida: los niños y niñas realizan producción de alimentos por medio de la huerta escolar." }
-    ]
-  },
-  comedor: {
-    titulo: "Comedor escolar",
-    intro: "El comedor transcurre de 12 a 13hs, entre la jornada curricular del turno mañana y las materias extracurriculares del turno tarde. Los niños y niñas pueden:",
-    items: [
+  "comedor": {
+    "titulo": "Comedor escolar",
+    "intro": "El comedor transcurre de 12 a 13hs, entre la jornada curricular del turno mañana y las materias extracurriculares del turno tarde. Los niños y niñas pueden:",
+    "items": [
       "Traer su vianda al ingresar a la escuela, que será servida caliente al momento del almuerzo.",
       "Adquirir el servicio de vianda escolar que ofrece el kiosco de la escuela."
     ]
   },
-  uniforme: {
-    titulo: "Uniforme escolar",
-    texto: "El uniforme forma parte de nuestra identidad como escuela, además de ser de excelente calidad, con un diseño moderno y cómodo para que los niños y niñas realicen actividades escolares.",
-    fotos: ["assets/fotos/uniforme-1.jpg", "assets/fotos/uniforme-2.jpg"],
-    prendas: ["Chomba", "Pantalón", "Campera", "Buzo", "Remera", "Bermuda"]
+  "uniforme": {
+    "titulo": "Uniforme escolar",
+    "texto": "El uniforme forma parte de nuestra identidad como escuela, además de ser de excelente calidad, con un diseño moderno y cómodo para que los niños y niñas realicen actividades escolares.",
+    "fotos": [
+      "assets/fotos/uniforme-1.jpg",
+      "assets/fotos/uniforme-2.jpg"
+    ],
+    "prendas": [
+      "Chomba",
+      "Pantalón",
+      "Campera",
+      "Buzo",
+      "Remera",
+      "Bermuda"
+    ]
   },
-  materiales: {
-    titulo: "Materiales escolares",
-    parrafos: [
+  "materiales": {
+    "titulo": "Materiales escolares",
+    "parrafos": [
       "Los materiales escolares forman parte de la actividad cotidiana de aprendizaje.",
       "Durante el año lectivo los docentes solicitan la compra de libros de literatura, manuales escolares, cuadernillos impresos, componentes de robótica, materiales deportivos y/o elementos de librería."
     ],
-    aviso: "La compra de dichos materiales es una responsabilidad de las familias y su adquisición es obligatoria."
+    "aviso": "La compra de dichos materiales es una responsabilidad de las familias y su adquisición es obligatoria."
   },
-  valores: {
-    titulo: "Valores",
-    intro: [
+  "valores": {
+    "titulo": "Valores",
+    "intro": [
       "El precio mensual del servicio es único e incluye la jornada del turno mañana y del turno tarde, de 8 a 15hs.",
       "Todos los valores expresados son mensuales, con vencimiento el día 10 de cada mes. Si el estudiante asiste solamente a la jornada obligatoria, de 8 a 12hs, abona el mismo arancel."
     ],
-    puntos: [
+    "puntos": [
       "Se abona una cuota de inscripción similar al valor de la cuota actual.",
       "No se abona cuota doble, cuota de mantenimiento ni cuota aguinaldo.",
       "Se abonan 11 cuotas consecutivas, de febrero a diciembre.",
       "Las familias que ingresan por primera vez abonan por adelantado la inscripción en concepto de reserva de vacante."
     ],
-    aviso: "Dentro del valor mensual no están incluidos el comedor escolar, el material didáctico (libros, impresiones, útiles escolares) ni el uniforme escolar. Consultá por descuentos por pagos adelantados.",
-    beneficioTitulo: "Beneficio por pago en término",
-    beneficioTexto: "Las familias que abonan la cuota mensual dentro del vencimiento, del 1 al 10 de cada mes, tienen bonificado un porcentaje de la inscripción para el año siguiente."
+    "aviso": "Dentro del valor mensual no están incluidos el comedor escolar, el material didáctico (libros, impresiones, útiles escolares) ni el uniforme escolar. Consultá por descuentos por pagos adelantados.",
+    "beneficioTitulo": "Beneficio por pago en término",
+    "beneficioTexto": "Las familias que abonan la cuota mensual dentro del vencimiento, del 1 al 10 de cada mes, tienen bonificado un porcentaje de la inscripción para el año siguiente."
   },
-  pagos: {
-    titulo: "Medios de pago",
-    items: [
+  "pagos": {
+    "titulo": "Medios de pago",
+    "items": [
       "Transferencia o depósito en cuenta bancaria, enviando el comprobante de la operación.",
       "Efectivo en la escuela."
     ]
   },
-  docs: {
-    titulo: "Documentación a presentar",
-    items: [
+  "docs": {
+    "titulo": "Documentación a presentar",
+    "items": [
       "DNI del niño/a actualizado",
       "Partida de nacimiento del niño/a",
       "DNI de madre/padre",
@@ -501,49 +663,61 @@ const BASE = {
       "Contrato de servicio educativo"
     ]
   },
-  inscripcion: {
-    titulo: "¿Cómo inscribir?",
-    intro: "Las familias interesadas en inscribir a su hijo o hija siguen estos pasos:",
-    pasos: [
+  "inscripcion": {
+    "titulo": "¿Cómo inscribir?",
+    "intro": "Las familias interesadas en inscribir a su hijo o hija siguen estos pasos:",
+    "pasos": [
       "Comunicarse por cualquiera de nuestros canales de contacto y solicitar una entrevista virtual.",
       "Una vez realizada la entrevista, visitar la escuela de forma presencial y completar el formulario de inscripción.",
       "Presentar la documentación correspondiente del niño/a y abonar la reserva de vacante.",
       "Con la documentación y el formulario completos, se procede a la inscripción definitiva del estudiante."
     ]
   },
-  contacto: {
-    titulo: "Contacto",
-    direccion: "Las Magnolias 2546, esquina Orquídeas",
-    email: "inscripciones@santotomas.ar",
-    telefono: "0348 4422797",
-    whatsapp: "+54 3484 311457",
-    web: "www.santotomas.ar",
-    instagram: "escuelasantotomas.escobar",
-    facebook: "santotomas.escobar"
+  "contacto": {
+    "titulo": "Contacto",
+    "direccion": "Las Magnolias 2546, esquina Orquídeas",
+    "email": "inscripciones@santotomas.ar",
+    "telefono": "0348 4422797",
+    "whatsapp": "+54 3484 311457",
+    "web": "www.santotomas.ar",
+    "instagram": "escuelasantotomas.escobar",
+    "facebook": "santotomas.escobar"
   },
-  verano: {
-    titulo: "Talleres de verano",
-    mes: "Febrero 2026",
-    actividades: ["Ludoteca", "Manualidades", "Deportes", "Actividades recreativas"],
-    horario: "9 a 12hs",
-    nota: "Para todas las edades"
+  "verano": {
+    "titulo": "Talleres de verano",
+    "mes": "Febrero 2027",
+    "actividades": [
+      "Ludoteca",
+      "Manualidades",
+      "Deportes",
+      "Actividades recreativas"
+    ],
+    "horario": "9 a 12hs",
+    "nota": "Para todas las edades"
   },
-  galeria: {
-    titulo: "La escuela por dentro",
-    intro: "Momentos de la vida cotidiana en el Santo Tomás.",
-    fotos: ["assets/fotos/galeria-1.jpg", "assets/fotos/galeria-2.jpg",
-            "assets/fotos/galeria-3.jpg", "assets/fotos/galeria-4.jpg"]
+  "galeria": {
+    "titulo": "La escuela por dentro",
+    "intro": "Momentos de la vida cotidiana en el Santo Tomás.",
+    "fotos": [
+      "assets/fotos/galeria-1.jpg",
+      "assets/fotos/galeria-2.jpg",
+      "assets/fotos/galeria-3.jpg",
+      "assets/fotos/galeria-4.jpg"
+    ]
   },
-
-  cierre: { frase: "Lo esencial es invisible a los ojos", autor: "Antoine de Saint-Exupéry" }
+  "cierre": {
+    "frase": "Lo esencial es invisible a los ojos",
+    "autor": "Antoine de Saint-Exupéry"
+  }
 };
 
 /* ============================================================
    2. Estado y guardado
    ============================================================ */
-const CLAVE = "propuesta-academica-2026";
+const CLAVE = "propuesta-academica-2027";
 let datos = JSON.parse(JSON.stringify(BASE));
 let editando = false, temporizador = null;
+let nivelActivo = "primaria";
 
 const $ = s => document.querySelector(s);
 const esc = s => String(s ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
@@ -621,15 +795,34 @@ function render(){
   <div class="portada">
     <img class="piezas" src="assets/isotipo.svg" alt="">
     <img class="sello" src="assets/isotipo.svg" alt="Isotipo del Colegio Santo Tomás">
-    ${marco("fotoPortada","marco-alto")}
     <h1>${ed("titulo","span")}</h1>
     <div class="anio">${ed("anio","span")}</div>
+    ${marco("fotoPortada","marco-alto")}
     <div class="mosaico">
       <i style="background:var(--naranja)"></i><i style="background:var(--verde)"></i>
       <i style="background:var(--violeta)"></i><i style="background:var(--rojo)"></i>
     </div>
-    <p class="verso">${ed("verso","span")}</p>
-    <div class="verso-fuente">${ed("versoObra","b")}${ed("versoAutor","span")}</div>
+  </div>`;
+
+  const cita = `
+  <figure class="banda-cita">
+    <span class="comilla" aria-hidden="true">“</span>
+    <blockquote>${ed("verso","span")}</blockquote>
+    <figcaption>${ed("versoObra","b")}${ed("versoAutor","span")}</figcaption>
+  </figure>`;
+
+  const n = d.niveles[nivelActivo];
+  const rn = "niveles." + nivelActivo;
+
+  const selector = `
+  <div class="selector" id="s-niveles">
+    <p class="rotulo">La jornada, las materias y los informes cambian según el nivel. Elegí cuál querés ver.</p>
+    <div class="botones">
+      ${Object.keys(d.niveles).map(k=>`
+        <button class="nivel-btn ${k===nivelActivo?"activo":""}" data-nivel="${k}">
+          ${esc(d.niveles[k].nombre)}<small>${esc(d.niveles[k].diegep)}</small>
+        </button>`).join("")}
+    </div>
   </div>`;
 
   const escuela = `
@@ -670,11 +863,11 @@ function render(){
 
   const jornada = `
   <section class="tinte" id="s-jornada" style="--acento:var(--azul)">
-    <h2>${ed("horario.titulo")}</h2><div class="subrayado"></div>
-    <div class="destacado">${ed("horario.destacado","h3")}${ed("horario.aclaracion","p")}</div>
-    ${marco("horario.foto")}
-    ${parrafos("horario.parrafos", d.horario.parrafos)}
-    ${agregarBtn("horario.parrafos","párrafo")}
+    <h2>${ed(rn+".horario.titulo")} <span style="color:var(--tinta-suave);font-size:.6em">${esc(n.nombre)}</span></h2><div class="subrayado"></div>
+    <div class="destacado">${ed(rn+".horario.destacado","h3")}${ed(rn+".horario.aclaracion","p")}</div>
+    ${marco(rn+".horario.foto")}
+    ${parrafos(rn+".horario.parrafos", n.horario.parrafos)}
+    ${agregarBtn(rn+".horario.parrafos","párrafo")}
     <div style="--acento:var(--verde)">
       <h2 style="margin-top:30px">${ed("comedor.titulo")}</h2><div class="subrayado"></div>
       ${ed("comedor.intro","p")}
@@ -683,14 +876,27 @@ function render(){
     </div>
   </section>
 
-  <section id="s-talleres" style="--acento:var(--rojo)">
-    <h2>${ed("extra.titulo")}</h2><div class="subrayado"></div>
-    ${ed("extra.intro","p","entrada")}
-    ${fichas("extra.items", d.extra.items)}
-    ${agregarBtn("extra.items","taller")}
+  <section id="s-materias" style="--acento:var(--celeste)">
+    <h2>${ed(rn+".curriculares.titulo")}</h2><div class="subrayado"></div>
+    ${ed(rn+".curriculares.intro","p","entrada")}
+    ${puntos(rn+".curriculares.lista", n.curriculares.lista)}
+    ${agregarBtn(rn+".curriculares.lista","materia")}
+    <div style="--acento:var(--rojo)">
+      <h2 style="margin-top:30px">${ed(rn+".extracurriculares.titulo")}</h2><div class="subrayado"></div>
+      ${ed(rn+".extracurriculares.intro","p","entrada")}
+      ${fichas(rn+".extracurriculares.items", n.extracurriculares.items)}
+      ${agregarBtn(rn+".extracurriculares.items","taller")}
+    </div>
   </section>
 
-  <section class="tinte" id="s-recursos" style="--acento:var(--naranja)">
+  <section class="tinte" id="s-informe" style="--acento:var(--verde)">
+    <h2>${ed(rn+".informe.titulo")}</h2><div class="subrayado"></div>
+    ${ed(rn+".informe.intro","p","entrada")}
+    ${puntos(rn+".informe.items", n.informe.items)}
+    ${agregarBtn(rn+".informe.items","punto")}
+  </section>
+
+  <section id="s-recursos" style="--acento:var(--naranja)">
     <h2>${ed("recursos.titulo")}</h2><div class="subrayado"></div>
     ${ed("recursos.intro","p","entrada")}
     ${fichas("recursos.items", d.recursos.items)}
@@ -698,7 +904,7 @@ function render(){
   </section>`;
 
   const utiles = `
-  <section id="s-utiles" style="--acento:var(--celeste)">
+  <section class="tinte" id="s-utiles" style="--acento:var(--celeste)">
     <h2>${ed("uniforme.titulo")}</h2><div class="subrayado"></div>
     ${ed("uniforme.texto","p")}
     <div class="tira-fotos">${d.uniforme.fotos.map((_,i)=>marco("uniforme.fotos."+i,"marco-alto")).join("")}</div>
@@ -788,12 +994,12 @@ function render(){
     <img src="assets/isotipo.svg" alt="">
     <p class="frase">${ed("cierre.frase")}</p>
     <p class="autor">${ed("cierre.autor")}</p>
-    <p class="pie-datos">${ed("escuela")} · ${ed("nivel")}<br>${ed("barrio")} · ${ed("diegep")}</p>
+    <p class="pie-datos">${ed("escuela")} · ${ed(rn+".nombre")}<br>${ed("barrio")} · ${ed(rn+".diegep")}</p>
   </div>`;
 
-  $("#app").innerHTML = portada + escuela + jornada + utiles + aranceles + contacto + galeria + cierre;
+  $("#app").innerHTML = portada + cita + escuela + selector + jornada + utiles + aranceles + contacto + galeria + cierre;
   $("#marcaTop").innerHTML = "<b>" + esc(d.escuela) + "</b><span>" + esc(d.titulo) + " " + esc(d.anio) + "</span>";
-  $("#nav").innerHTML = [["s-escuela","La escuela"],["s-pedagogia","Cómo enseñamos"],["s-equipo","Equipo"],["s-jornada","Jornada"],["s-talleres","Talleres"],["s-recursos","Recursos"],["s-utiles","Uniforme"],["s-aranceles","Aranceles"],["s-docs","Documentación"],["s-inscripcion","Inscripción"],["s-galeria","Fotos"],["s-verano","Verano"]]
+  $("#nav").innerHTML = [["s-escuela","La escuela"],["s-pedagogia","Cómo enseñamos"],["s-equipo","Equipo"],["s-niveles","Niveles"],["s-jornada","Jornada"],["s-materias","Materias"],["s-informe","Informes"],["s-recursos","Recursos"],["s-utiles","Uniforme"],["s-aranceles","Aranceles"],["s-docs","Documentación"],["s-inscripcion","Inscripción"],["s-galeria","Fotos"],["s-verano","Verano"]]
     .map(([id,t])=>`<a href="#${id}">${t}</a>`).join("");
 }
 
@@ -808,6 +1014,13 @@ document.addEventListener("input", e=>{
 });
 
 document.addEventListener("click", e=>{
+  const nivel = e.target.closest("[data-nivel]");
+  if(nivel){
+    nivelActivo = nivel.dataset.nivel;
+    render();
+    document.getElementById("s-niveles").scrollIntoView({block:"start"});
+    return;
+  }
   const add = e.target.closest("[data-agregar]");
   if(add){
     const ruta = add.dataset.agregar, arr = leer(ruta), modelo = arr[0];
