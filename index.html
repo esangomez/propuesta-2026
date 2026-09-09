@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Propuesta Académica 2026 — Colegio Santo Tomás</title>
+<meta name="description" content="Propuesta Académica 2026 del Colegio Santo Tomás. Belén de Escobar, Buenos Aires.">
+<meta name="theme-color" content="#00669c">
+<link rel="icon" href="assets/isotipo.svg">
+<meta property="og:title" content="Propuesta Académica 2026 — Colegio Santo Tomás">
+<meta property="og:description" content="Jornada de 8 a 15hs, talleres extracurriculares, aranceles e inscripción 2026.">
+<meta property="og:image" content="assets/isotipo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700;9..144,900&family=Livvic:ital,wght@0,300;0,400;0,600;0,700;1,400&family=M+PLUS+Rounded+1c:wght@700;800&family=Caveat+Brush&display=swap" rel="stylesheet">
+
+<style>
+/* ==========================================================
+   Colegio Santo Tomás — sistema del manual de marca
+   Paleta corporativa · Fraunces (títulos) · Livvic (texto)
+   Gladiola (acentos manuscritos) · M PLUS Rounded 1c (logotipo)
+   ========================================================== */
+:root{
+  --azul:#00669c;
+  --celeste:#55a1d9;
+  --rojo:#e41a22;
+  --verde:#50b32b;
+  --naranja:#f99c02;
+  --violeta:#8f3f9c;
+  --papel:#f4edec;
+  --blanco:#ffffff;
+  --tinta:#241f22;
+  --tinta-suave:#5d5459;
+  --linea:#e2d6d4;
+  --acento:var(--azul);
+  --radio:20px;
+
+  --tipo-titulo:Fraunces,Georgia,"Times New Roman",serif;
+  --tipo-texto:Livvic,"Segoe UI",system-ui,-apple-system,sans-serif;
+  --tipo-mano:Gladiola,"Caveat Brush",cursive;
+  --tipo-logo:"M PLUS Rounded 1c",Livvic,sans-serif;
+}
+
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  background:var(--papel); color:var(--tinta);
+  font-family:var(--tipo-texto); font-size:16.5px; line-height:1.6;
+  -webkit-text-size-adjust:100%;
+}
+#doc{max-width:760px; margin:0 auto; background:var(--blanco); position:relative; overflow:hidden}
+
+/* ---------- barra ---------- */
+.barra{
+  position:sticky; top:0; z-index:40; display:flex; align-items:center; gap:10px;
+  padding:9px 14px; background:rgba(255,255,255,.96); backdrop-filter:blur(8px);
+  border-bottom:1px solid var(--linea);
+}
+.barra img{width:36px; height:36px; flex:0 0 auto}
+.barra .marca{flex:1; min-width:0; line-height:1.1}
+.barra .marca b{font-family:var(--tipo-logo); font-weight:800; font-size:14.5px; color:var(--azul); display:block; letter-spacing:-.01em}
+.barra .marca span{font-size:11.5px; color:var(--tinta-suave)}
+.btn{
+  font-family:var(--tipo-texto); font-weight:600; font-size:13.5px;
+  border:1.5px solid var(--linea); background:#fff; color:var(--tinta-suave);
+  border-radius:999px; padding:8px 15px; cursor:pointer; white-space:nowrap;
+}
+.btn:hover{border-color:var(--azul); color:var(--azul)}
+.btn.activo{background:var(--azul); border-color:var(--azul); color:#fff}
+.btn.chico{padding:6px 12px; font-size:12.5px}
+.btn:focus-visible,[contenteditable]:focus-visible,a:focus-visible{outline:3px solid var(--naranja); outline-offset:2px}
+
+.nav{
+  display:flex; gap:7px; overflow-x:auto; padding:9px 14px; background:#fff;
+  border-bottom:1px solid var(--linea); position:sticky; top:55px; z-index:39; scrollbar-width:none;
+}
+.nav::-webkit-scrollbar{display:none}
+.nav a{
+  flex:0 0 auto; text-decoration:none; color:var(--tinta-suave); font-size:13px;
+  font-weight:600; padding:6px 13px; border-radius:999px; background:var(--papel);
+}
+
+/* ---------- portada ---------- */
+.portada{position:relative; padding:34px 22px 38px; background:var(--papel); overflow:hidden}
+.portada .piezas{position:absolute; right:-52px; top:-42px; width:210px; opacity:.09; pointer-events:none}
+.portada > *:not(.piezas){position:relative; z-index:1}
+.portada .sello{width:104px; height:104px; display:block; margin-bottom:20px}
+.portada h1{
+  font-family:var(--tipo-titulo); font-weight:900; font-size:clamp(40px,12vw,62px);
+  line-height:.95; letter-spacing:-.03em; margin:0; color:var(--azul);
+}
+.portada .anio{
+  font-family:var(--tipo-titulo); font-weight:900; font-size:clamp(52px,17vw,88px);
+  line-height:.9; color:var(--rojo); margin-top:6px; letter-spacing:-.04em;
+}
+.mosaico{display:flex; gap:6px; margin:22px 0}
+.mosaico i{height:9px; border-radius:3px; flex:1}
+.verso{
+  font-family:var(--tipo-mano); font-size:26px; line-height:1.25; color:var(--violeta);
+  max-width:18ch; margin:0;
+}
+.verso-fuente{margin-top:10px; font-size:13px; color:var(--tinta-suave)}
+.verso-fuente b{display:block; color:var(--tinta); font-weight:600}
+
+/* ---------- secciones ---------- */
+section{padding:34px 22px 36px; position:relative; background:var(--blanco)}
+section.tinte{background:var(--papel)}
+h2{
+  font-family:var(--tipo-titulo); font-weight:700; font-size:28px; line-height:1.12;
+  letter-spacing:-.02em; margin:0 0 8px; color:var(--acento);
+}
+.subrayado{width:52px; height:6px; border-radius:3px; background:var(--acento); margin:0 0 18px}
+h3{font-family:var(--tipo-texto); font-weight:700; font-size:17px; margin:0 0 3px; color:var(--tinta)}
+p{margin:0 0 12px; max-width:60ch}
+.entrada{font-size:17px; font-weight:600; margin-bottom:18px; max-width:56ch}
+.item{display:flex; gap:12px; margin:0 0 18px; align-items:flex-start}
+.item .cuerpo{flex:1; min-width:0}
+.item .cuerpo p{margin:0; color:var(--tinta-suave); font-size:15.5px}
+.punto{
+  flex:0 0 auto; width:18px; height:18px; margin-top:5px; background:var(--acento);
+  border-radius:6px 6px 6px 2px;
+}
+.pasos{margin:0; padding:0; list-style:none}
+.pasos li{display:flex; gap:14px; margin-bottom:20px; align-items:flex-start}
+.pasos .num{
+  flex:0 0 auto; width:42px; height:42px; display:grid; place-items:center; color:#fff;
+  font-family:var(--tipo-titulo); font-weight:900; font-size:19px; border-radius:13px 13px 13px 4px;
+}
+.destacado{background:var(--acento); color:#fff; border-radius:var(--radio); padding:20px; margin:0 0 20px}
+.destacado h3{color:#fff; font-size:18px}
+.destacado p{color:rgba(255,255,255,.94); margin-bottom:8px}
+.destacado p:last-child{margin-bottom:0}
+.suave{background:#fff; border:1.5px solid var(--linea); border-radius:var(--radio); padding:16px 18px; margin:0 0 20px}
+.aviso{font-size:14.5px; color:var(--tinta-suave); max-width:58ch}
+.chips{display:flex; flex-wrap:wrap; gap:8px; margin:2px 0 18px}
+.chip{
+  background:#fff; border:1.5px solid var(--linea); border-radius:12px; padding:7px 14px;
+  font-weight:600; font-size:14.5px; display:inline-flex; align-items:center; gap:8px;
+}
+.chip i{width:10px; height:10px; border-radius:3px; background:var(--acento)}
+.lista{margin:0; padding:0; list-style:none}
+.lista li{display:flex; gap:11px; align-items:flex-start; padding:10px 0; border-bottom:1px solid var(--linea); font-size:15.5px}
+.lista li:last-child{border-bottom:0}
+.lista .tic{flex:0 0 auto; width:14px; height:14px; margin-top:6px; border-radius:4px 4px 4px 1px; background:var(--acento)}
+.cita{
+  font-family:var(--tipo-mano); font-size:25px; line-height:1.25; color:#fff; margin:0 0 6px;
+}
+
+.contactos{display:grid; gap:10px}
+.contacto{
+  display:flex; align-items:center; gap:13px; text-decoration:none; color:#fff;
+  border-radius:15px; padding:14px 16px; font-weight:600; font-size:16px;
+  background:var(--acento); word-break:break-word;
+}
+.contacto .ic{flex:0 0 auto; width:34px; height:34px; border-radius:11px; background:rgba(255,255,255,.24); display:grid; place-items:center; font-size:16px}
+.contacto small{display:block; font-weight:400; font-size:12.5px; opacity:.9}
+
+.verano{background:var(--celeste); color:#fff; border-radius:24px; padding:26px 22px}
+.verano h2{color:#fff}
+.verano .subrayado{background:var(--naranja)}
+.verano .lista li{border-color:rgba(255,255,255,.32); color:#fff}
+.verano .lista .tic{background:var(--naranja)}
+.verano .cajas{display:flex; gap:10px; flex-wrap:wrap; margin-top:16px}
+.verano .caja{background:rgba(255,255,255,.2); border-radius:15px; padding:13px 16px; flex:1; min-width:135px}
+.verano .caja b{font-family:var(--tipo-titulo); font-weight:700; font-size:21px; display:block}
+.verano .caja span{font-size:12.5px; opacity:.92}
+
+.cierre{background:var(--azul); color:#fff; padding:38px 22px 42px; text-align:center}
+.cierre img{width:82px; height:82px; margin-bottom:18px; background:#fff; border-radius:22px; padding:8px}
+.cierre .frase{font-family:var(--tipo-mano); font-size:30px; line-height:1.2; max-width:16ch; margin:0 auto}
+.cierre .autor{margin-top:8px; font-size:14px; color:rgba(255,255,255,.75)}
+.cierre .pie-datos{margin-top:24px; font-size:13px; color:rgba(255,255,255,.7); line-height:1.75}
+
+/* ---------- modo edición ---------- */
+[contenteditable="true"]{
+  outline:none; border-radius:5px; cursor:text;
+  box-shadow:inset 0 -2px 0 rgba(0,102,156,.4); background:rgba(0,102,156,.06);
+}
+[contenteditable="true"]:hover{background:rgba(0,102,156,.13)}
+[contenteditable="true"]:empty::before{content:"Escribí acá…"; color:#a89ea1}
+.destacado [contenteditable="true"],.contacto [contenteditable="true"],.verano [contenteditable="true"],.cierre [contenteditable="true"]{
+  box-shadow:inset 0 -2px 0 rgba(255,255,255,.6); background:rgba(255,255,255,.18);
+}
+.fila-edit{display:none; gap:6px; margin:-10px 0 18px}
+.editando .fila-edit{display:flex}
+.mini{
+  border:1.5px dashed #cbbcb9; background:#fff; color:var(--tinta-suave);
+  font-family:var(--tipo-texto); font-size:12.5px; font-weight:600;
+  border-radius:999px; padding:5px 11px; cursor:pointer;
+}
+.mini:hover{border-color:var(--azul); color:var(--azul)}
+.quitar{display:none; flex:0 0 auto; border:0; background:transparent; cursor:pointer; color:#bdb0ad; font-size:19px; line-height:1; padding:2px 4px}
+.editando .quitar{display:block}
+.quitar:hover{color:var(--rojo)}
+.destacado .quitar,.verano .quitar{color:rgba(255,255,255,.8)}
+.pie{
+  position:sticky; bottom:0; z-index:41; display:none; gap:8px; align-items:center;
+  padding:10px 14px; background:rgba(255,255,255,.97); border-top:1px solid var(--linea); overflow-x:auto;
+}
+.editando .pie{display:flex}
+.estado{font-size:12.5px; color:var(--tinta-suave); margin-left:auto; white-space:nowrap}
+
+.velo{position:fixed; inset:0; background:rgba(36,31,34,.62); z-index:60; display:none; align-items:center; justify-content:center; padding:16px}
+.velo.abierto{display:flex}
+.modal{background:#fff; border-radius:20px; padding:20px; width:100%; max-width:560px}
+.modal h3{font-family:var(--tipo-titulo); font-weight:700; font-size:20px; margin-bottom:6px}
+.modal p{font-size:14px; color:var(--tinta-suave)}
+.modal textarea{width:100%; height:230px; font-family:ui-monospace,Menlo,Consolas,monospace; font-size:12px; border:1.5px solid var(--linea); border-radius:12px; padding:11px; resize:vertical}
+.modal .acciones{display:flex; gap:8px; margin-top:12px; flex-wrap:wrap}
+
+@media (prefers-reduced-motion:reduce){*{transition:none!important; animation:none!important}}
+@media print{
+  .barra,.nav,.pie,.fila-edit,.quitar,.velo{display:none!important}
+  body{background:#fff} #doc{max-width:none}
+  section{break-inside:avoid}
+  [contenteditable]{box-shadow:none!important; background:transparent!important}
+}
+</style>
+</head>
+<body>
+
+<div id="doc">
+  <header class="barra">
+    <img src="assets/isotipo.svg" alt="Isotipo del Colegio Santo Tomás">
+    <div class="marca" id="marcaTop"></div>
+    <button class="btn chico" id="btnImprimir">Imprimir</button>
+    <button class="btn chico" id="btnEditar">Editar</button>
+  </header>
+  <nav class="nav" id="nav"></nav>
+  <main id="app"></main>
+  <div class="pie">
+    <button class="btn chico" id="btnExportar">Exportar contenido</button>
+    <button class="btn chico" id="btnImportar">Importar</button>
+    <button class="btn chico" id="btnReset">Restablecer</button>
+    <span class="estado" id="estado">Sin cambios</span>
+  </div>
+</div>
+
+<div class="velo" id="velo">
+  <div class="modal">
+    <h3 id="modalTitulo"></h3>
+    <p id="modalTexto"></p>
+    <textarea id="modalCampo" spellcheck="false"></textarea>
+    <div class="acciones">
+      <button class="btn" id="modalPrimario"></button>
+      <button class="btn" id="modalCerrar">Cerrar</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   1. CONTENIDO — todo el texto de la propuesta vive acá
+   ============================================================ */
+const BASE = {
+  escuela: "Colegio Santo Tomás",
+  nivel: "Escuela Primaria",
+  barrio: "Barrio Lambertuchi · Belén de Escobar",
+  diegep: "DIEGEP 8869",
+  titulo: "Propuesta Académica",
+  anio: "2026",
+  verso: "Una vez estudié, en un librito de yuyo, cosas que solo yo sé, y que nunca olvidaré.",
+  versoObra: "Canción del Jardinero",
+  versoAutor: "María Elena Walsh",
+
+  mision: {
+    titulo: "Nuestra misión: educar para la diversidad",
+    parrafos: ["Los profesionales de la educación que formamos parte de la Colegio Santo Tomás tenemos como misión una sociedad más justa y solidaria; utilizando como valores la diversidad, el trabajo territorial y el desarrollo de las comunidades; respetando y fomentando el conocimiento de las distintas expresiones culturales."]
+  },
+  compromiso: {
+    titulo: "Nuestro compromiso",
+    parrafos: [
+      "Los docentes y profesionales que formamos parte de la Colegio Santo Tomás nos comprometemos a desplegar procesos educativos que favorezcan la inclusión de niños y niñas en su diversidad, considerando todas sus diferencias, por medio de acciones educativas enmarcadas en los valores fundamentales de igualdad y libertad.",
+      "A su vez, buscamos generar prácticas institucionales que promuevan la solidaridad y el respeto mutuo, que posibiliten la aproximación de los niños y niñas a la heterogeneidad, para asegurar el éxito en los aprendizajes de todos nuestros y nuestras estudiantes."
+    ]
+  },
+  equipo: {
+    titulo: "Nuestro equipo de trabajo",
+    intro: "El equipo que forma parte de la Colegio Santo Tomás se caracteriza por:",
+    items: [
+      { titulo: "El trato cordial entre docentes y estudiantes", texto: "Consideramos que para cualquier proceso de enseñanza y aprendizaje es necesario un vínculo." },
+      { titulo: "Ser contemplativos ante las sugerencias de las familias", texto: "Es fundamental para el desarrollo del niño/a el acuerdo entre la familia y la escuela." },
+      { titulo: "El profesionalismo a la hora de la enseñanza", texto: "Somos docentes que buscamos la formación profesional continua para lograr prácticas educativas modernas, personalizadas y efectivas." }
+    ],
+    cita: "No me sigan a mí, sigan al niño",
+    citaAutor: "María Montessori"
+  },
+  horario: {
+    titulo: "Horario",
+    destacado: "La jornada escolar dura 7 horas, de 8 a 15hs.",
+    aclaracion: "Dentro de la jornada están la educación curricular obligatoria, el espacio de transición del comedor escolar y los talleres extracurriculares.",
+    parrafos: [
+      "El turno tarde es un espacio pensado para las familias que necesitan una carga horaria escolar de mayor duración.",
+      "El objetivo no es solamente asistir más tiempo a la escuela, sino realizar en el mismo espacio actividades deportivas, recreativas y artísticas junto a otros niños y niñas."
+    ]
+  },
+  extra: {
+    titulo: "Materias extracurriculares",
+    intro: "El turno tarde permite que los niños y niñas realicen actividades orientadas al arte, las nuevas tecnologías, la lengua extranjera, el medio ambiente y el deporte.",
+    items: [
+      { titulo: "Academia de Inglés", texto: "La enseñanza del idioma es esencial en este mundo globalizado. Aprendemos inglés desde lo cotidiano, con un rol muy importante para la comunicación oral. Además, los niños rinden exámenes internacionales de la mano de PATH Examinations." },
+      { titulo: "Deportes", texto: "Los niños y niñas realizan básquet y fútbol como disciplinas deportivas, teniendo como marco el juego reglado, la competencia sana y el entrenamiento necesario para generar habilidades en cada deporte." },
+      { titulo: "Artes", texto: "Las expresiones artísticas son tan diversas como las personas; por eso, durante el turno tarde se brindan los talleres de Creatividad y Folklore." },
+      { titulo: "Informática y Robótica", texto: "Resolver problemas en situaciones cotidianas mediante el uso de la tecnología es el principal objetivo de este taller, que pone en juego la programación, la robótica y la impresión 3D." },
+      { titulo: "Huerta", texto: "Los recursos naturales son parte fundamental de nuestra vida: los niños y niñas realizan producción de alimentos por medio de la huerta escolar." }
+    ]
+  },
+  comedor: {
+    titulo: "Comedor escolar",
+    intro: "El comedor transcurre de 12 a 13hs, entre la jornada curricular del turno mañana y las materias extracurriculares del turno tarde. Los niños y niñas pueden:",
+    items: [
+      "Traer su vianda al ingresar a la escuela, que será servida caliente al momento del almuerzo.",
+      "Adquirir el servicio de vianda escolar que ofrece el kiosco de la escuela."
+    ]
+  },
+  uniforme: {
+    titulo: "Uniforme escolar",
+    texto: "El uniforme forma parte de nuestra identidad como escuela, además de ser de excelente calidad, con un diseño moderno y cómodo para que los niños y niñas realicen actividades escolares.",
+    prendas: ["Chomba", "Pantalón", "Campera", "Buzo", "Remera", "Bermuda"]
+  },
+  materiales: {
+    titulo: "Materiales escolares",
+    parrafos: [
+      "Los materiales escolares forman parte de la actividad cotidiana de aprendizaje.",
+      "Durante el año lectivo los docentes solicitan la compra de libros de literatura, manuales escolares, cuadernillos impresos, componentes de robótica, materiales deportivos y/o elementos de librería."
+    ],
+    aviso: "La compra de dichos materiales es una responsabilidad de las familias y su adquisición es obligatoria."
+  },
+  valores: {
+    titulo: "Valores",
+    intro: [
+      "El precio mensual del servicio es único e incluye la jornada del turno mañana y del turno tarde, de 8 a 15hs.",
+      "Todos los valores expresados son mensuales, con vencimiento el día 10 de cada mes. Si el estudiante asiste solamente a la jornada obligatoria, de 8 a 12hs, abona el mismo arancel."
+    ],
+    puntos: [
+      "Se abona una cuota de inscripción similar al valor de la cuota actual.",
+      "No se abona cuota doble, cuota de mantenimiento ni cuota aguinaldo.",
+      "Se abonan 11 cuotas consecutivas, de febrero a diciembre.",
+      "Las familias que ingresan por primera vez abonan por adelantado la inscripción en concepto de reserva de vacante."
+    ],
+    aviso: "Dentro del valor mensual no están incluidos el comedor escolar, el material didáctico (libros, impresiones, útiles escolares) ni el uniforme escolar. Consultá por descuentos por pagos adelantados.",
+    beneficioTitulo: "Beneficio por pago en término",
+    beneficioTexto: "Las familias que abonan la cuota mensual dentro del vencimiento, del 1 al 10 de cada mes, tienen bonificado un porcentaje de la inscripción para el año siguiente."
+  },
+  pagos: {
+    titulo: "Medios de pago",
+    items: [
+      "Transferencia o depósito en cuenta bancaria, enviando el comprobante de la operación.",
+      "Efectivo en la escuela."
+    ]
+  },
+  docs: {
+    titulo: "Documentación a presentar",
+    items: [
+      "DNI del niño/a actualizado",
+      "Partida de nacimiento del niño/a",
+      "DNI de madre/padre",
+      "Servicio a nombre de madre/padre",
+      "Copia del recibo de sueldo de madre/padre",
+      "DNI de adultos autorizados para retirar al niño/a",
+      "Libreta de vacunas obligatorias y carnet de obra social",
+      "Ficha de salud",
+      "Constancia de alumno regular de Nivel Inicial o Nivel Primario, según corresponda",
+      "Boletín o RITE de calificaciones de Nivel Primario, o último informe del Nivel Inicial",
+      "Libre deuda, si proviene de una escuela privada",
+      "Legajo completo del estudiante, una vez emitido el pase escolar",
+      "Autorización de uso de imagen",
+      "Formulario de preinscripción",
+      "Contrato de servicio educativo"
+    ]
+  },
+  inscripcion: {
+    titulo: "¿Cómo inscribir?",
+    intro: "Las familias interesadas en inscribir a su hijo o hija siguen estos pasos:",
+    pasos: [
+      "Comunicarse por cualquiera de nuestros canales de contacto y solicitar una entrevista virtual.",
+      "Una vez realizada la entrevista, visitar la escuela de forma presencial y completar el formulario de inscripción.",
+      "Presentar la documentación correspondiente del niño/a y abonar la reserva de vacante.",
+      "Con la documentación y el formulario completos, se procede a la inscripción definitiva del estudiante."
+    ]
+  },
+  contacto: {
+    titulo: "Contacto",
+    direccion: "Las Magnolias 2546, esquina Orquídeas",
+    email: "inscripciones@santotomas.ar",
+    telefono: "0348 4422797",
+    whatsapp: "+54 3484 311457",
+    web: "www.santotomas.ar",
+    instagram: "escuelasantotomas.escobar",
+    facebook: "santotomas.escobar"
+  },
+  verano: {
+    titulo: "Talleres de verano",
+    mes: "Febrero 2026",
+    actividades: ["Ludoteca", "Manualidades", "Deportes", "Actividades recreativas"],
+    horario: "9 a 12hs",
+    nota: "Para todas las edades"
+  },
+  cierre: { frase: "Lo esencial es invisible a los ojos", autor: "Antoine de Saint-Exupéry" }
+};
+
+/* ============================================================
+   2. Estado y guardado
+   ============================================================ */
+const CLAVE = "propuesta-academica-2026";
+let datos = JSON.parse(JSON.stringify(BASE));
+let editando = false, temporizador = null;
+
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;");
+
+/* funciona igual dentro del chat que publicado en la web */
+const almacen = {
+  async leer(){
+    if (window.storage) { const r = await window.storage.get(CLAVE); return r && r.value; }
+    return localStorage.getItem(CLAVE);
+  },
+  async escribir(v){
+    if (window.storage) return window.storage.set(CLAVE, v);
+    localStorage.setItem(CLAVE, v);
+  }
+};
+
+function leer(ruta){ return ruta.split(".").reduce((o,k)=> o==null?o:o[k], datos); }
+function escribir(ruta, valor){
+  const p = ruta.split(".");
+  const ult = p.pop();
+  p.reduce((o,k)=>o[k], datos)[ult] = valor;
+}
+function ed(ruta, tag="span", clase=""){
+  return `<${tag}${clase?` class="${clase}"`:""} data-ruta="${ruta}"${editando?' contenteditable="plaintext-only"':''}>${esc(leer(ruta))}</${tag}>`;
+}
+const estado = t => $("#estado").textContent = t;
+
+function guardar(){
+  clearTimeout(temporizador);
+  temporizador = setTimeout(async ()=>{
+    estado("Guardando…");
+    try{ await almacen.escribir(JSON.stringify(datos)); estado("Guardado"); }
+    catch(e){ estado("No se pudo guardar. Exportá el contenido"); }
+  }, 500);
+}
+async function cargar(){
+  try{
+    const v = await almacen.leer();
+    if(v) datos = Object.assign(JSON.parse(JSON.stringify(BASE)), JSON.parse(v));
+  }catch(e){}
+}
+
+/* ============================================================
+   3. Render
+   ============================================================ */
+const agregarBtn = (ruta, etiqueta) => `<div class="fila-edit"><button class="mini" data-agregar="${ruta}">+ ${etiqueta}</button></div>`;
+const quitarBtn  = (ruta, i) => `<button class="quitar" data-quitar="${ruta}" data-i="${i}" aria-label="Quitar">×</button>`;
+const parrafos   = (ruta, arr, clase="") => arr.map((_,i)=>`<div class="item">${ed(ruta+"."+i,"p",i===0?clase:"")}${quitarBtn(ruta,i)}</div>`).join("");
+const puntos     = (ruta, arr) => `<ul class="lista">${arr.map((_,i)=>`<li><span class="tic"></span><div style="flex:1">${ed(ruta+"."+i,"span")}</div>${quitarBtn(ruta,i)}</li>`).join("")}</ul>`;
+const fichas     = (ruta, arr) => arr.map((_,i)=>`<div class="item"><span class="punto"></span><div class="cuerpo">${ed(ruta+"."+i+".titulo","h3")}${ed(ruta+"."+i+".texto","p")}</div>${quitarBtn(ruta,i)}</div>`).join("");
+
+function render(){
+  const d = datos;
+
+  const portada = `
+  <div class="portada">
+    <img class="piezas" src="assets/isotipo.svg" alt="">
+    <img class="sello" src="assets/isotipo.svg" alt="Isotipo del Colegio Santo Tomás">
+    <h1>${ed("titulo","span")}</h1>
+    <div class="anio">${ed("anio","span")}</div>
+    <div class="mosaico">
+      <i style="background:var(--naranja)"></i><i style="background:var(--verde)"></i>
+      <i style="background:var(--violeta)"></i><i style="background:var(--rojo)"></i>
+    </div>
+    <p class="verso">${ed("verso","span")}</p>
+    <div class="verso-fuente">${ed("versoObra","b")}${ed("versoAutor","span")}</div>
+  </div>`;
+
+  const escuela = `
+  <section class="tinte" id="s-escuela" style="--acento:var(--naranja)">
+    <h2>${ed("mision.titulo")}</h2><div class="subrayado"></div>
+    ${parrafos("mision.parrafos", d.mision.parrafos)}
+    ${agregarBtn("mision.parrafos","párrafo")}
+    <div style="--acento:var(--violeta)">
+      <h2 style="margin-top:30px">${ed("compromiso.titulo")}</h2><div class="subrayado"></div>
+      ${parrafos("compromiso.parrafos", d.compromiso.parrafos)}
+      ${agregarBtn("compromiso.parrafos","párrafo")}
+    </div>
+  </section>
+
+  <section id="s-equipo" style="--acento:var(--violeta)">
+    <h2>${ed("equipo.titulo")}</h2><div class="subrayado"></div>
+    ${ed("equipo.intro","p","entrada")}
+    ${fichas("equipo.items", d.equipo.items)}
+    ${agregarBtn("equipo.items","característica")}
+    <div class="destacado" style="--acento:var(--azul)">
+      <p class="cita">${ed("equipo.cita")}</p>
+      <p style="font-size:14px">${ed("equipo.citaAutor")}</p>
+    </div>
+  </section>`;
+
+  const jornada = `
+  <section class="tinte" id="s-jornada" style="--acento:var(--azul)">
+    <h2>${ed("horario.titulo")}</h2><div class="subrayado"></div>
+    <div class="destacado">${ed("horario.destacado","h3")}${ed("horario.aclaracion","p")}</div>
+    ${parrafos("horario.parrafos", d.horario.parrafos)}
+    ${agregarBtn("horario.parrafos","párrafo")}
+    <div style="--acento:var(--verde)">
+      <h2 style="margin-top:30px">${ed("comedor.titulo")}</h2><div class="subrayado"></div>
+      ${ed("comedor.intro","p")}
+      ${puntos("comedor.items", d.comedor.items)}
+      ${agregarBtn("comedor.items","opción")}
+    </div>
+  </section>
+
+  <section id="s-talleres" style="--acento:var(--rojo)">
+    <h2>${ed("extra.titulo")}</h2><div class="subrayado"></div>
+    ${ed("extra.intro","p","entrada")}
+    ${fichas("extra.items", d.extra.items)}
+    ${agregarBtn("extra.items","taller")}
+  </section>`;
+
+  const utiles = `
+  <section class="tinte" id="s-utiles" style="--acento:var(--celeste)">
+    <h2>${ed("uniforme.titulo")}</h2><div class="subrayado"></div>
+    ${ed("uniforme.texto","p")}
+    <div class="chips">${d.uniforme.prendas.map((_,i)=>`<span class="chip"><i></i>${ed("uniforme.prendas."+i)}${quitarBtn("uniforme.prendas",i)}</span>`).join("")}</div>
+    ${agregarBtn("uniforme.prendas","prenda")}
+    <div style="--acento:var(--violeta)">
+      <h2 style="margin-top:30px">${ed("materiales.titulo")}</h2><div class="subrayado"></div>
+      ${parrafos("materiales.parrafos", d.materiales.parrafos)}
+      ${agregarBtn("materiales.parrafos","párrafo")}
+      <div class="suave"><p style="margin:0;font-weight:700">${ed("materiales.aviso")}</p></div>
+    </div>
+  </section>`;
+
+  const aranceles = `
+  <section id="s-aranceles" style="--acento:var(--verde)">
+    <h2>${ed("valores.titulo")}</h2><div class="subrayado"></div>
+    ${parrafos("valores.intro", d.valores.intro, "entrada")}
+    ${agregarBtn("valores.intro","párrafo")}
+    ${puntos("valores.puntos", d.valores.puntos)}
+    ${agregarBtn("valores.puntos","condición")}
+    <p class="aviso" style="margin-top:14px">${ed("valores.aviso")}</p>
+    <div class="destacado" style="--acento:var(--rojo);margin-top:20px">
+      ${ed("valores.beneficioTitulo","h3")}${ed("valores.beneficioTexto","p")}
+    </div>
+    <div style="--acento:var(--naranja)">
+      <h2 style="margin-top:30px">${ed("pagos.titulo")}</h2><div class="subrayado"></div>
+      ${puntos("pagos.items", d.pagos.items)}
+      ${agregarBtn("pagos.items","medio de pago")}
+    </div>
+  </section>
+
+  <section class="tinte" id="s-docs" style="--acento:var(--violeta)">
+    <h2>${ed("docs.titulo")}</h2><div class="subrayado"></div>
+    ${puntos("docs.items", d.docs.items)}
+    ${agregarBtn("docs.items","documento")}
+  </section>`;
+
+  const tel = String(d.contacto.telefono).replace(/[^\d+]/g,"");
+  const wa  = String(d.contacto.whatsapp).replace(/[^\d]/g,"");
+  const web = String(d.contacto.web).replace(/^https?:\/\//,"");
+  const colores = ["var(--naranja)","var(--verde)","var(--violeta)","var(--rojo)"];
+
+  const contacto = `
+  <section id="s-inscripcion" style="--acento:var(--azul)">
+    <h2>${ed("inscripcion.titulo")}</h2><div class="subrayado"></div>
+    ${ed("inscripcion.intro","p","entrada")}
+    <ol class="pasos">
+      ${d.inscripcion.pasos.map((_,i)=>`<li><span class="num" style="background:${colores[i%4]}">${i+1}</span><div style="flex:1">${ed("inscripcion.pasos."+i,"p")}</div>${quitarBtn("inscripcion.pasos",i)}</li>`).join("")}
+    </ol>
+    ${agregarBtn("inscripcion.pasos","paso")}
+    <h2 style="margin-top:30px">${ed("contacto.titulo")}</h2><div class="subrayado"></div>
+    <div class="contactos">
+      <a class="contacto" style="--acento:var(--naranja)" href="https://maps.google.com/?q=${encodeURIComponent(d.contacto.direccion+" Belén de Escobar")}" target="_blank" rel="noopener"><span class="ic">◎</span><span><small>Dirección</small>${ed("contacto.direccion")}</span></a>
+      <a class="contacto" style="--acento:var(--violeta)" href="mailto:${esc(d.contacto.email)}"><span class="ic">@</span><span><small>Correo</small>${ed("contacto.email")}</span></a>
+      <a class="contacto" style="--acento:var(--rojo)" href="tel:${tel}"><span class="ic">✆</span><span><small>Teléfono</small>${ed("contacto.telefono")}</span></a>
+      <a class="contacto" style="--acento:var(--verde)" href="https://wa.me/${wa}" target="_blank" rel="noopener"><span class="ic">✆</span><span><small>WhatsApp</small>${ed("contacto.whatsapp")}</span></a>
+      <a class="contacto" style="--acento:var(--celeste)" href="https://${esc(web)}" target="_blank" rel="noopener"><span class="ic">▷</span><span><small>Sitio web</small>${ed("contacto.web")}</span></a>
+      <a class="contacto" style="--acento:var(--azul)" href="https://instagram.com/${esc(d.contacto.instagram)}" target="_blank" rel="noopener"><span class="ic">◍</span><span><small>Instagram</small>${ed("contacto.instagram")}</span></a>
+      <a class="contacto" style="--acento:#3a5a80" href="https://facebook.com/${esc(d.contacto.facebook)}" target="_blank" rel="noopener"><span class="ic">f</span><span><small>Facebook</small>${ed("contacto.facebook")}</span></a>
+    </div>
+  </section>`;
+
+  const cierre = `
+  <section id="s-verano" class="tinte">
+    <div class="verano">
+      <p style="font-weight:600;opacity:.95;margin-bottom:4px">${ed("verano.mes")}</p>
+      <h2>${ed("verano.titulo")}</h2><div class="subrayado"></div>
+      ${puntos("verano.actividades", d.verano.actividades)}
+      ${agregarBtn("verano.actividades","actividad")}
+      <div class="cajas">
+        <div class="caja"><b>${ed("verano.horario")}</b><span>Horario</span></div>
+        <div class="caja"><b>${ed("verano.nota")}</b><span>Inscripción abierta</span></div>
+      </div>
+    </div>
+  </section>
+  <div class="cierre">
+    <img src="assets/isotipo.svg" alt="">
+    <p class="frase">${ed("cierre.frase")}</p>
+    <p class="autor">${ed("cierre.autor")}</p>
+    <p class="pie-datos">${ed("escuela")} · ${ed("nivel")}<br>${ed("barrio")} · ${ed("diegep")}</p>
+  </div>`;
+
+  $("#app").innerHTML = portada + escuela + jornada + utiles + aranceles + contacto + cierre;
+  $("#marcaTop").innerHTML = "<b>" + esc(d.escuela) + "</b><span>" + esc(d.titulo) + " " + esc(d.anio) + "</span>";
+  $("#nav").innerHTML = [["s-escuela","La escuela"],["s-equipo","Equipo"],["s-jornada","Jornada"],["s-talleres","Talleres"],["s-utiles","Uniforme"],["s-aranceles","Aranceles"],["s-docs","Documentación"],["s-inscripcion","Inscripción"],["s-verano","Verano"]]
+    .map(([id,t])=>`<a href="#${id}">${t}</a>`).join("");
+}
+
+/* ============================================================
+   4. Interacción
+   ============================================================ */
+document.addEventListener("input", e=>{
+  const el = e.target.closest("[data-ruta]");
+  if(!el || !editando) return;
+  escribir(el.dataset.ruta, el.textContent);
+  estado("Editando…"); guardar();
+});
+
+document.addEventListener("click", e=>{
+  const add = e.target.closest("[data-agregar]");
+  if(add){
+    const ruta = add.dataset.agregar, arr = leer(ruta), modelo = arr[0];
+    arr.push(modelo && typeof modelo === "object"
+      ? Object.fromEntries(Object.keys(modelo).map(k=>[k,""])) : "");
+    render(); guardar();
+    const nuevo = document.querySelector(`[data-ruta^="${ruta}.${arr.length-1}"]`);
+    if(nuevo) nuevo.focus();
+    return;
+  }
+  const del = e.target.closest("[data-quitar]");
+  if(del){ leer(del.dataset.quitar).splice(Number(del.dataset.i),1); render(); guardar(); return; }
+  if(editando && e.target.closest("a.contacto")) e.preventDefault();
+});
+
+$("#btnEditar").addEventListener("click", ()=>{
+  editando = !editando;
+  document.body.classList.toggle("editando", editando);
+  $("#btnEditar").classList.toggle("activo", editando);
+  $("#btnEditar").textContent = editando ? "Listo" : "Editar";
+  render();
+  if(editando) estado("Tocá cualquier texto para cambiarlo");
+});
+$("#btnImprimir").addEventListener("click", ()=>window.print());
+
+function modal({titulo,texto,valor,boton,alConfirmar}){
+  $("#modalTitulo").textContent = titulo;
+  $("#modalTexto").textContent = texto;
+  $("#modalCampo").value = valor;
+  $("#modalPrimario").textContent = boton;
+  $("#modalPrimario").onclick = alConfirmar;
+  $("#velo").classList.add("abierto");
+}
+$("#modalCerrar").addEventListener("click", ()=>$("#velo").classList.remove("abierto"));
+$("#velo").addEventListener("click", e=>{ if(e.target.id==="velo") $("#velo").classList.remove("abierto"); });
+
+$("#btnExportar").addEventListener("click", ()=>modal({
+  titulo:"Exportar contenido",
+  texto:"Copiá este texto y guardalo. Sirve como respaldo y para pasar el contenido a otra copia de la página.",
+  valor:JSON.stringify(datos,null,2), boton:"Copiar",
+  alConfirmar: async ()=>{
+    $("#modalCampo").select();
+    try{ await navigator.clipboard.writeText($("#modalCampo").value); }catch(e){ document.execCommand("copy"); }
+    $("#modalPrimario").textContent = "Copiado";
+  }
+}));
+
+$("#btnImportar").addEventListener("click", ()=>modal({
+  titulo:"Importar contenido",
+  texto:"Pegá acá un contenido exportado antes. Reemplaza lo que ves ahora.",
+  valor:"", boton:"Reemplazar contenido",
+  alConfirmar: ()=>{
+    try{
+      datos = Object.assign(JSON.parse(JSON.stringify(BASE)), JSON.parse($("#modalCampo").value));
+      render(); guardar(); $("#velo").classList.remove("abierto");
+    }catch(e){
+      $("#modalTexto").textContent = "Ese texto no tiene el formato esperado. Pegalo completo, desde la primera llave hasta la última.";
+    }
+  }
+}));
+
+$("#btnReset").addEventListener("click", ()=>modal({
+  titulo:"Restablecer",
+  texto:"Vuelve al contenido original y se pierden los cambios guardados. Si querés conservarlos, cerrá y exportá primero.",
+  valor:"", boton:"Restablecer todo",
+  alConfirmar: ()=>{ datos = JSON.parse(JSON.stringify(BASE)); render(); guardar(); $("#velo").classList.remove("abierto"); }
+}));
+
+(async ()=>{ await cargar(); render(); })();
+</script>
+</body>
+</html>
