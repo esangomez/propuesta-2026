@@ -1,34 +1,16 @@
-/* =========================================================================
-   Propuesta Académica — Colegio Santo Tomás
-   CONTENIDO DE LA PROPUESTA
-
-   Este es el único archivo que hay que tocar para cambiar los textos.
-   Editalo desde GitHub: abrilo, tocá el lápiz, cambiá lo que quieras
-   y guardá con "Commit changes". En dos minutos se ve en la web.
-
-   Reglas para que no se rompa:
-   - El texto va siempre entre comillas dobles: "así".
-   - Cada línea termina en coma, menos la última de cada bloque.
-   - Si el texto lleva comillas dobles adentro, escribilas como \"
-   - Las listas van entre corchetes [ ] y los bloques entre llaves { }.
-
-   Si algo sale mal, la página aparece en blanco: deshacé el último cambio
-   desde el historial del archivo en GitHub y vuelve a andar.
-   ========================================================================= */
-
 const BASE = {
   "escuela": "Colegio Santo Tomás",
   "barrio": "Barrio Lambertuchi · Belén de Escobar",
   "titulo": "Propuesta Académica",
   "anio": "2027",
   "fotoPortada": "assets/fotos/portada.jpg",
-  "verso": "Partimos de una visión de la innovación educativa que se construye sobre lo que ya hacemos y tenemos, valorando aquello que es importante conservar y buscando que cada una de nuestras clases se transforme en un espacio propicio para la aventura del pensamiento.",
+  "verso": "Partimos de una visión de la innovación educativa que se construye sobre lo que ya hacemos y tenemos, valorando aquello que es importante conservar y buscando que cada una de nuestras clases se transforme en un espacio propicio para la aventura del pensamiento. ",
   "versoObra": "Las Preguntas Educativas entran a las aulas",
   "versoAutor": "Melina Furman y María Emilia Larsen",
   "mision": {
     "titulo": "Nuestra misión: educación de calidad",
     "parrafos": [
-      "Los profesionales de la educación que formamos parte del Colegio Santo Tomás tenemos como misión brindar una Educación de Calidad donde el bienestar en comunidad, las distintas formas de enseñar y aprender, los recursos didácticos y las tecnologías educativas son condición necesaria para lograr más y mejores aprendizajes."
+      "Para los profesionales del Colegio Santo Tomás, una educación de excelencia es el resultado de priorizar el bienestar del alumno, la innovación docente y la calidad de los recursos educativos."
     ]
   },
   "calidades": {
@@ -36,7 +18,7 @@ const BASE = {
     "items": [
       {
         "titulo": "La calidad humana",
-        "texto": "El desarrollo del estudiante no es solo académico: también es emocional, social, ético y ciudadano. Cuidamos el clima de convivencia, prevenimos el acoso escolar y sostenemos el bienestar de estudiantes y docentes."
+        "texto": "El desarrollo del estudiante no es solo académico: también es emocional, social, ético y ciudadano. Cuidamos el clima de convivencia y sostenemos el bienestar de estudiantes y docentes."
       },
       {
         "titulo": "La calidad de los aprendizajes",
@@ -44,14 +26,14 @@ const BASE = {
       },
       {
         "titulo": "La calidad de los recursos",
-        "texto": "La selección, la formación y el bienestar del equipo docente, la infraestructura y las herramientas digitales son las que sostienen todo lo anterior."
+        "texto": "La selección, la formación y el bienestar del equipo docente, la infraestructura, los recursos didácticos y las herramientas digitales son parte clave de la experiencia educativa."
       }
     ]
   },
   "compromiso": {
     "titulo": "Nuestro compromiso",
     "parrafos": [
-      "Los docentes y profesionales que formamos parte del Colegio Santo Tomás nos comprometemos a desplegar procesos educativos que favorezcan la inclusión de niños y niñas en su diversidad, considerando todas sus diferencias, por medio de acciones educativas enmarcadas en los valores fundamentales de igualdad y libertad.",
+      "Los docentes y profesionales que formamos parte de la Colegio Santo Tomás nos comprometemos a desplegar procesos educativos que favorezcan la inclusión de niños y niñas en su diversidad, considerando todas sus diferencias, por medio de acciones educativas enmarcadas en los valores fundamentales de igualdad y libertad.",
       "A su vez, buscamos generar prácticas institucionales que promuevan la solidaridad y el respeto mutuo, que posibiliten la aproximación de los niños y niñas a la heterogeneidad, para asegurar el éxito en los aprendizajes de todos nuestros y nuestras estudiantes."
     ]
   },
@@ -65,7 +47,7 @@ const BASE = {
       },
       {
         "titulo": "Una tarea para cada estudiante",
-        "texto": "Personalizamos y adecuamos las propuestas según lo que cada uno necesita."
+        "texto": "Personalizamos y adecuamos las propuestas según las particularidades de cada estudiante, teniendo siempre como objetivo los aprendizajes propios de cada año."
       },
       {
         "titulo": "Tecnología con sentido",
@@ -73,7 +55,7 @@ const BASE = {
       },
       {
         "titulo": "Aprender haciendo",
-        "texto": "La experimentación y la vivencia son la manera de comprobar que lo aprendido sirve. Las salidas educativas, los eventos y actos escolares y las muestras artísticas son parte fundamental del año escolar."
+        "texto": "La experimentación y la vivencia son la manera de comprobar que lo aprendido sirve. Las salidas educativas, los actos escolares y las muestras artísticas son parte fundamental del año lectivo."
       }
     ]
   },
@@ -102,11 +84,11 @@ const BASE = {
   "equipo": {
     "foto": "assets/fotos/equipo.jpg",
     "titulo": "Nuestro equipo de trabajo",
-    "intro": "El equipo que forma parte del Colegio Santo Tomás se caracteriza por:",
+    "intro": "El equipo que forma parte de la Colegio Santo Tomás se caracteriza por:",
     "items": [
       {
         "titulo": "El trato cordial entre docentes y estudiantes",
-        "texto": "Consideramos que para cualquier proceso de enseñanza y aprendizaje es necesario un vínculo sostenido entre el contenido, el estudiante, sus docentes y la familia a la cuál pertenece."
+        "texto": "Consideramos que para cualquier proceso de enseñanza y aprendizaje es necesario un vínculo sostenido entre cuatro pilares: el estudiante, el contenido, el docente y la familia."
       },
       {
         "titulo": "Ser contemplativos ante las sugerencias de las familias",
@@ -118,7 +100,7 @@ const BASE = {
       },
       {
         "titulo": "La comunicación asertiva",
-        "texto": "Creemos que comunicar las situaciones a la persona correcta en el momento indicado colaboran a reducir las controversias y a generar un mejor clima entre los miembros de la comunidad escolar."
+        "texto": "Saber a quién, cómo y por cuál medio comunicarse es una competencia indispensiable del siglo XXI."
       }
     ],
     "cita": "No me sigan a mí, sigan al niño",
@@ -134,8 +116,7 @@ const BASE = {
         "destacado": "La jornada escolar dura 7 horas, de 8 a 15hs.",
         "aclaracion": "Dentro de la jornada están la educación curricular obligatoria, el espacio de transición del comedor escolar y las asignaturas extracurriculares.",
         "parrafos": [
-          "El objetivo de una Jornada Completa no es solamente asistir más tiempo a la escuela, sino realizar en el mismo espacio actividades deportivas, recreativas y artísticas junto a otros niños y niñas.",
-          "Durante el turno mañana, los estudiantes asisten a las materias curriculares obligatorias del Nivel Primario"
+          "El objetivo de una Jornada Completa no es solamente asistir más tiempo a la escuela, sino realizar en el mismo espacio actividades deportivas, recreativas y artísticas junto a otros niños y niñas."
         ]
       },
       "curriculares": {
@@ -148,9 +129,7 @@ const BASE = {
           "Ciencias Sociales",
           "Educación Física",
           "Educación Artística",
-          "Inglés",
-          "Tecnología",
-          "Educación Emocional"
+          "Inglés"
         ]
       },
       "extracurriculares": {
@@ -170,17 +149,12 @@ const BASE = {
           {
             "foto": "assets/fotos/artes.jpg",
             "titulo": "Artes",
-            "texto": "Las expresiones artísticas son tan diversas como las personas; por eso, durante el turno tarde se brindan los talleres de Creatividad y Folklore."
+            "texto": "Las expresiones artísticas son tan diversas como las personas; por eso, durante el turno tarde se brindan los talleres de Creatividad."
           },
           {
-            "foto": "assets/fotos/robotica.jpg",
-            "titulo": "Informática y Robótica",
+            "foto": "",
+            "titulo": "Robótica",
             "texto": "Resolver problemas en situaciones cotidianas mediante el uso de la tecnología es el principal objetivo de este taller, que pone en juego la programación, la robótica y la impresión 3D."
-          },
-          {
-            "foto": "assets/fotos/huerta.jpg",
-            "titulo": "Huerta",
-            "texto": "Los recursos naturales son parte fundamental de nuestra vida: los niños y niñas realizan producción de alimentos por medio de la huerta escolar."
           }
         ]
       },
@@ -236,7 +210,7 @@ const BASE = {
   },
   "comedor": {
     "titulo": "Comedor escolar",
-    "intro": "El comedor transcurre de 12 a 13hs, entre la jornada curricular del turno mañana y las materias extracurriculares del turno tarde. Los niños y niñas pueden:",
+    "intro": "El comedor transcurre de 12 a 12:45hs, entre la jornada curricular del turno mañana y las materias extracurriculares del turno tarde. Los niños y niñas pueden:",
     "items": [
       "Traer su vianda al ingresar a la escuela, que será servida caliente al momento del almuerzo.",
       "Adquirir el servicio de vianda escolar que ofrece el kiosco de la escuela."
