@@ -77,7 +77,7 @@ const BASE = {
       },
       {
         "titulo": "Para experimentar",
-        "texto": "Microscopio digital, huerta escolar y elementos de educación física."
+        "texto": "Microscopio digital, elementos de educación física y recur"
       }
     ]
   },
@@ -235,8 +235,7 @@ const BASE = {
   "materiales": {
     "titulo": "Materiales escolares",
     "parrafos": [
-      "Los materiales escolares forman parte de la actividad cotidiana de aprendizaje.",
-      "Durante el año lectivo los docentes solicitan la compra de libros de literatura, manuales escolares, cuadernillos impresos, componentes de robótica, materiales deportivos y/o elementos de librería."
+      "Los materiales escolares forman parte de la actividad cotidiana de aprendizaje."
     ],
     "aviso": "La compra de dichos materiales es una responsabilidad de las familias y su adquisición es obligatoria."
   },
@@ -244,7 +243,7 @@ const BASE = {
     "titulo": "Valores",
     "intro": [
       "El precio mensual del servicio es único e incluye la jornada del turno mañana y del turno tarde, de 8 a 15hs.",
-      "Todos los valores expresados son mensuales, con vencimiento el día 10 de cada mes. Si el estudiante asiste solamente a la jornada obligatoria, de 8 a 12hs, abona el mismo arancel."
+      "Todos los valores expresados son mensuales, con vencimiento el día 10 de cada mes."
     ],
     "puntos": [
       "Se abona una cuota de inscripción similar al valor de la cuota actual.",
