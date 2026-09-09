@@ -376,7 +376,7 @@ const BASE = {
   "titulo": "Propuesta Académica",
   "anio": "2027",
   "fotoPortada": "assets/fotos/portada.jpg",
-  "verso": "\"La innovación educativa se construye sobre lo que ya hacemos y tenemos, valorando aquello que es importante conservar. Y que, al mismo tiempo, nos propone estirarnos un poco más lejos, buscando que la escuela se transforme en un espacio propicio para la aventura del pensamiento\"",
+  "verso": "Partimos de una visión de la innovación educativa que se construye sobre lo que ya hacemos y tenemos, valorando aquello que es importante conservar y buscando que cada una de nuestras clases se transforme en un espacio propicio para la aventura del pensamiento.",
   "versoObra": "Las Preguntas Educativas entran a las aulas",
   "versoAutor": "Melina Furman y María Emilia Larsen",
   "mision": {
@@ -753,10 +753,26 @@ function guardar(){
     catch(e){ estado("No se pudo guardar. Exportá el contenido"); }
   }, 500);
 }
+/* Combina lo guardado con el contenido del archivo, sección por sección.
+   Solo se aceptan claves que el archivo conoce: así una copia guardada vieja
+   no puede revivir secciones eliminadas ni pisar bloques enteros. */
+function combinar(base, guardado){
+  if(Array.isArray(base) || typeof base !== "object" || base === null){
+    return guardado !== undefined ? guardado : base;
+  }
+  const salida = {};
+  for(const clave of Object.keys(base)){
+    salida[clave] = guardado && clave in guardado
+      ? combinar(base[clave], guardado[clave])
+      : base[clave];
+  }
+  return salida;
+}
+
 async function cargar(){
   try{
     const v = await almacen.leer();
-    if(v) datos = Object.assign(JSON.parse(JSON.stringify(BASE)), JSON.parse(v));
+    if(v) datos = combinar(JSON.parse(JSON.stringify(BASE)), JSON.parse(v));
   }catch(e){}
 }
 
@@ -1074,7 +1090,7 @@ $("#btnImportar").addEventListener("click", ()=>modal({
   valor:"", boton:"Reemplazar contenido",
   alConfirmar: ()=>{
     try{
-      datos = Object.assign(JSON.parse(JSON.stringify(BASE)), JSON.parse($("#modalCampo").value));
+      datos = combinar(JSON.parse(JSON.stringify(BASE)), JSON.parse($("#modalCampo").value));
       render(); guardar(); $("#velo").classList.remove("abierto");
     }catch(e){
       $("#modalTexto").textContent = "Ese texto no tiene el formato esperado. Pegalo completo, desde la primera llave hasta la última.";
