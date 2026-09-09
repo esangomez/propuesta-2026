@@ -9,8 +9,10 @@ Construida sobre el manual de marca del Colegio Santo Tomás (Eliana Tatángelo,
 ## Qué incluye
 
 ```
-index.html            la propuesta completa (contenido, diseño y editor en un solo archivo)
+contenido.js          todos los textos de la propuesta — es el archivo que se edita
+index.html            diseño, maquetación y editor
 assets/isotipo.svg    isotipo oficial, vectorial, en los cuatro colores corporativos
+assets/fotos/         fotografías de la propuesta
 ```
 
 ## Publicar en GitHub Pages
@@ -49,18 +51,37 @@ Para un dominio propio (por ejemplo `propuesta.santotomas.ar`), agregar un archi
 
 ## Editar el contenido
 
-**Desde el navegador.** Botón **Editar** arriba a la derecha: cualquier texto se
-vuelve modificable y aparecen los botones para agregar o quitar ítems de las
-listas. Los cambios quedan guardados en ese navegador, no en el sitio publicado.
-Sirve para probar redacciones, armar una versión para una familia puntual o
-imprimir un PDF con cambios.
+Todos los textos están en **`contenido.js`**. Es el único archivo que hay que
+tocar para cambiar lo que se ve. `index.html` tiene el diseño y no hace falta
+abrirlo nunca.
 
-**En el archivo, para que lo vean todos.** El contenido vive en el objeto `BASE`,
-al principio del `<script>` de `index.html`. Editar ahí el texto y volver a subir
-el archivo actualiza la versión pública.
+### Cambios chicos, directo en GitHub
 
-El flujo cómodo combina las dos: editar en el navegador, usar **Exportar
-contenido**, y pegar ese JSON dentro de `BASE`.
+1. Entrar al repositorio y abrir `contenido.js`.
+2. Tocar el lápiz, arriba a la derecha.
+3. Buscar el texto y cambiarlo.
+4. Abajo, **Commit changes**. En dos minutos se ve en la web.
+
+Funciona igual desde el celular.
+
+Reglas para que no se rompa: el texto va entre comillas dobles, cada línea
+termina en coma menos la última de cada bloque, y las comillas dobles dentro
+de un texto se escriben `\"`. Si algo queda mal la página aparece en blanco;
+se arregla deshaciendo el último cambio desde el historial del archivo.
+
+### Cambios grandes, desde la página
+
+Botón **Editar** en la propuesta: se modifica cualquier texto, se agregan o
+quitan ítems y se cambian las fotos, viendo el resultado. Eso queda guardado
+solo en ese navegador. Para publicarlo: **Exportar contenido**, **Copiar**, y
+pegar en `contenido.js` reemplazando todo lo que haya. Lo que copia el botón
+ya viene con la forma exacta del archivo.
+
+### Los dos niveles
+
+`contenido.js` tiene un bloque `niveles` con `primaria` y `secundaria`. Cada
+uno lleva su horario, sus materias y su informe. El resto de la propuesta es
+común a los dos.
 
 ## Aplicación del manual de marca
 
