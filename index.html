@@ -246,7 +246,7 @@ p{margin:0 0 12px; max-width:60ch}
   position:relative; margin:0 0 16px; overflow:hidden; background:var(--papel);
   border-radius:22px 22px 22px 6px; aspect-ratio:4/3;
 }
-.marco img{width:100%; height:100%; object-fit:cover; display:block}
+.marco img{width:100%; height:100%; object-fit:contain; display:block}
 .marco .vacio{
   width:100%; height:100%; display:grid; place-items:center; text-align:center;
   color:var(--tinta-suave); font-size:14px; font-weight:600;
@@ -549,10 +549,6 @@ function render(){
     ${marco("equipo.foto")}
     ${fichas("equipo.items", d.equipo.items)}
     ${agregarBtn("equipo.items","característica")}
-    <div class="destacado" style="--acento:var(--azul)">
-      <p class="cita">${ed("equipo.cita")}</p>
-      <p style="font-size:14px">${ed("equipo.citaAutor")}</p>
-    </div>
   </section>`;
 
   const jornada = `
@@ -616,12 +612,6 @@ function render(){
   const aranceles = `
   <section id="s-aranceles" style="--acento:var(--verde)">
     <h2>${ed("valores.titulo")}</h2><div class="subrayado"></div>
-    <div class="destacado caja-arancel" style="--acento:var(--azul)">
-      <p class="rotulo-arancel">${ed(rn+".arancel.rotulo")} · ${esc(n.nombre)}</p>
-      <div class="monto">${ed(rn+".arancel.monto","span")}</div>
-      <p>${ed(rn+".arancel.leyenda")}</p>
-    </div>
-    <p class="aviso" style="margin:-8px 0 18px">${ed(rn+".arancel.vigencia")}</p>
     ${parrafos("valores.intro", d.valores.intro, "entrada")}
     ${agregarBtn("valores.intro","párrafo")}
     ${puntos("valores.puntos", d.valores.puntos)}

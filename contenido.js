@@ -123,9 +123,7 @@ const BASE = {
         "titulo": "La comunicación asertiva",
         "texto": "Creemos que comunicar las situaciones a la persona correcta en el momento indicado colaboran a reducir las controversias y a generar un mejor clima entre los miembros de la comunidad escolar."
       }
-    ],
-    "cita": "No me sigan a mí, sigan al niño",
-    "citaAutor": "María Montessori"
+    ]
   },
   "niveles": {
     "primaria": {
