@@ -80,8 +80,13 @@ ya viene con la forma exacta del archivo.
 ### Los dos niveles
 
 `contenido.js` tiene un bloque `niveles` con `primaria` y `secundaria`. Cada
-uno lleva su horario, sus materias y su informe. El resto de la propuesta es
-común a los dos.
+uno lleva su arancel, su horario, sus materias, su informe y su uniforme. El
+resto de la propuesta —misión, equipo, recursos, documentación, inscripción y
+contacto— es común a los dos.
+
+Los aranceles están en `niveles` → `primaria` (o `secundaria`) → `arancel`.
+Son cuatro líneas: el rótulo, el monto, qué incluye y desde cuándo rige.
+Cuando cambien los valores, actualizá también la línea `vigencia`.
 
 ## Aplicación del manual de marca
 

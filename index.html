@@ -265,6 +265,16 @@ p{margin:0 0 12px; max-width:60ch}
   background:rgba(36,31,34,.82); color:#fff; backdrop-filter:blur(4px);
 }
 .foto-btn:hover{background:var(--azul)}
+.caja-arancel{text-align:left}
+.caja-arancel .rotulo-arancel{
+  font-size:13.5px; font-weight:600; letter-spacing:.02em; margin:0 0 2px;
+  color:rgba(255,255,255,.85);
+}
+.caja-arancel .monto{
+  font-family:var(--tipo-titulo); font-weight:900; font-size:46px; line-height:1;
+  letter-spacing:-.03em; margin:0 0 8px;
+}
+@media (min-width:960px){ .caja-arancel .monto{font-size:60px} }
 .tira-fotos{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:18px}
 .tira-fotos .marco{margin:0}
 .mosaico-fotos{display:grid; grid-template-columns:1fr 1fr; gap:12px; margin-bottom:18px}
@@ -582,11 +592,12 @@ function render(){
 
   const utiles = `
   <section class="tinte" id="s-utiles" style="--acento:var(--celeste)">
-    <h2>${ed("uniforme.titulo")}</h2><div class="subrayado"></div>
-    ${ed("uniforme.texto","p")}
-    <div class="tira-fotos">${d.uniforme.fotos.map((_,i)=>marco("uniforme.fotos."+i,"marco-alto")).join("")}</div>
-    <div class="chips">${d.uniforme.prendas.map((_,i)=>`<span class="chip"><i></i>${ed("uniforme.prendas."+i)}${quitarBtn("uniforme.prendas",i)}</span>`).join("")}</div>
-    ${agregarBtn("uniforme.prendas","prenda")}
+    <h2>${ed(rn+".uniforme.titulo")} <span style="color:var(--tinta-suave);font-size:.6em">${esc(n.nombre)}</span></h2><div class="subrayado"></div>
+    ${ed(rn+".uniforme.texto","p")}
+    <div class="tira-fotos">${n.uniforme.fotos.map((_,i)=>marco(rn+".uniforme.fotos."+i,"marco-alto")).join("")}</div>
+    ${agregarBtn(rn+".uniforme.fotos","foto")}
+    <div class="chips">${n.uniforme.prendas.map((_,i)=>`<span class="chip"><i></i>${ed(rn+".uniforme.prendas."+i)}${quitarBtn(rn+".uniforme.prendas",i)}</span>`).join("")}</div>
+    ${agregarBtn(rn+".uniforme.prendas","prenda")}
     <div style="--acento:var(--violeta)">
       <h2 style="margin-top:30px">${ed("materiales.titulo")}</h2><div class="subrayado"></div>
       ${parrafos("materiales.parrafos", d.materiales.parrafos)}
@@ -598,6 +609,12 @@ function render(){
   const aranceles = `
   <section id="s-aranceles" style="--acento:var(--verde)">
     <h2>${ed("valores.titulo")}</h2><div class="subrayado"></div>
+    <div class="destacado caja-arancel" style="--acento:var(--azul)">
+      <p class="rotulo-arancel">${ed(rn+".arancel.rotulo")} · ${esc(n.nombre)}</p>
+      <div class="monto">${ed(rn+".arancel.monto","span")}</div>
+      <p>${ed(rn+".arancel.leyenda")}</p>
+    </div>
+    <p class="aviso" style="margin:-8px 0 18px">${ed(rn+".arancel.vigencia")}</p>
     ${parrafos("valores.intro", d.valores.intro, "entrada")}
     ${agregarBtn("valores.intro","párrafo")}
     ${puntos("valores.puntos", d.valores.puntos)}
