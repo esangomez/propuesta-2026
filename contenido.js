@@ -1,331 +1,69 @@
-const BASE = {
-  "escuela": "Colegio Santo Tomás",
-  "barrio": "Barrio Lambertuchi · Belén de Escobar",
-  "titulo": "Propuesta Académica",
-  "anio": "2027",
-  "fotoPortada": "assets/fotos/portada.jpg",
-  "verso": "Partimos de una visión de la innovación educativa que se construye sobre lo que ya hacemos y tenemos, valorando aquello que es importante conservar y buscando que cada una de nuestras clases se transforme en un espacio propicio para la aventura del pensamiento. ",
-  "versoObra": "Las Preguntas Educativas entran a las aulas",
-  "versoAutor": "Melina Furman y María Emilia Larsen",
-  "mision": {
-    "titulo": "Nuestra misión: educación de calidad",
-    "parrafos": [
-      "Para los profesionales del Colegio Santo Tomás, una educación de excelencia es el resultado de priorizar el bienestar del alumno, la innovación docente y la calidad de los recursos educativos."
-    ]
-  },
-  "calidades": {
-    "titulo": "Las tres calidades",
-    "items": [
-      {
-        "titulo": "La calidad humana",
-        "texto": "El desarrollo del estudiante no es solo académico: también es emocional, social, ético y ciudadano. Cuidamos el clima de convivencia y sostenemos el bienestar de estudiantes y docentes."
-      },
-      {
-        "titulo": "La calidad de los aprendizajes",
-        "texto": "Miramos los resultados, pero también los procesos: la eficacia de los métodos de enseñanza, la evaluación formativa, y el desarrollo del pensamiento crítico, la resolución de problemas, la creatividad y la colaboración."
-      },
-      {
-        "titulo": "La calidad de los recursos",
-        "texto": "La selección, la formación y el bienestar del equipo docente, la infraestructura, los recursos didácticos y las herramientas digitales son parte clave de la experiencia educativa."
-      }
-    ]
-  },
-  "compromiso": {
-    "titulo": "Nuestro compromiso",
-    "parrafos": [
-      "Los docentes y profesionales que formamos parte de la Colegio Santo Tomás nos comprometemos a desplegar procesos educativos que favorezcan la inclusión de niños y niñas en su diversidad, considerando todas sus diferencias, por medio de acciones educativas enmarcadas en los valores fundamentales de igualdad y libertad.",
-      "A su vez, buscamos generar prácticas institucionales que promuevan la solidaridad y el respeto mutuo, que posibiliten la aproximación de los niños y niñas a la heterogeneidad, para asegurar el éxito en los aprendizajes de todos nuestros y nuestras estudiantes."
-    ]
-  },
-  "pedagogia": {
-    "titulo": "Cómo enseñamos",
-    "intro": "Nuestra propuesta pedagógica se apoya en cuatro decisiones.",
-    "items": [
-      {
-        "titulo": "El bienestar escolar es la base",
-        "texto": "Nadie aprende bien donde no se siente cuidado. El clima de convivencia no es un tema aparte del aprendizaje: es su condición. La educación emocional es, además, un área que se enseña, con objetivos propios en cada año."
-      },
-      {
-        "titulo": "Una tarea para cada estudiante",
-        "texto": "Personalizamos y adecuamos las propuestas según las particularidades de cada estudiante, teniendo siempre como objetivo los aprendizajes propios de cada año."
-      },
-      {
-        "titulo": "Tecnología con sentido",
-        "texto": "Las herramientas digitales cambian las formas de enseñar y de aprender. La programación, la robótica, la impresión 3D y el aula virtual forman parte del trabajo cotidiano, no de una clase suelta."
-      },
-      {
-        "titulo": "Aprender haciendo",
-        "texto": "La experimentación y la vivencia son la manera de comprobar que lo aprendido sirve. Las salidas educativas, los actos escolares y las muestras artísticas son parte fundamental del año lectivo."
-      }
-    ]
-  },
-  "recursos": {
-    "titulo": "Recursos para aprender",
-    "intro": "Con qué cuentan los estudiantes dentro del aula y fuera de ella.",
-    "items": [
-      {
-        "titulo": "En cada aula",
-        "texto": "Televisor de 50 pulgadas, pizarra blanca, manuales escolares e infografías de los temas que se están trabajando."
-      },
-      {
-        "titulo": "Equipamiento digital",
-        "texto": "Notebooks para el trabajo en clase y Google Classroom como aula virtual, donde quedan las consignas y las entregas."
-      },
-      {
-        "titulo": "Robótica e impresión 3D",
-        "texto": "Kits de robótica del programa Smart Team e impresora 3D: los estudiantes programan, diseñan e imprimen sus propios objetos."
-      },
-      {
-        "titulo": "Para experimentar",
-        "texto": "Microscopio digital, elementos de educación física y recur"
-      }
-    ]
-  },
-  "equipo": {
-    "foto": "assets/fotos/equipo.jpg",
-    "titulo": "Nuestro equipo de trabajo",
-    "intro": "El equipo que forma parte de la Colegio Santo Tomás se caracteriza por:",
-    "items": [
-      {
-        "titulo": "El trato cordial entre docentes y estudiantes",
-        "texto": "Consideramos que para cualquier proceso de enseñanza y aprendizaje es necesario un vínculo sostenido entre cuatro pilares: el estudiante, el contenido, el docente y la familia."
-      },
-      {
-        "titulo": "Ser contemplativos ante las sugerencias de las familias",
-        "texto": "Es fundamental para el desarrollo del niño/a el acuerdo entre la familia y la escuela."
-      },
-      {
-        "titulo": "El profesionalismo a la hora de la enseñanza",
-        "texto": "Somos docentes que buscamos la formación profesional continua para lograr prácticas educativas modernas, personalizadas y efectivas."
-      },
-      {
-        "titulo": "La comunicación asertiva",
-        "texto": "Saber a quién, cómo y por cuál medio comunicarse es una competencia indispensiable del siglo XXI."
-      }
-    ],
-    "cita": "No me sigan a mí, sigan al niño",
-    "citaAutor": "María Montessori"
-  },
-  "niveles": {
-    "primaria": {
-      "nombre": "Nivel Primario",
-      "diegep": "DIEGEP 8869",
-      "horario": {
-        "foto": "assets/fotos/jornada.jpg",
-        "titulo": "Horario",
-        "destacado": "La jornada escolar dura 7 horas, de 8 a 15hs.",
-        "aclaracion": "Dentro de la jornada están la educación curricular obligatoria, el espacio de transición del comedor escolar y las asignaturas extracurriculares.",
-        "parrafos": [
-          "El objetivo de una Jornada Completa no es solamente asistir más tiempo a la escuela, sino realizar en el mismo espacio actividades deportivas, recreativas y artísticas junto a otros niños y niñas."
-        ]
-      },
-      "curriculares": {
-        "titulo": "Materias curriculares",
-        "intro": "Las áreas obligatorias del Nivel Primario, que se cursan durante el turno mañana.",
-        "lista": [
-          "Prácticas del Lenguaje",
-          "Matemática",
-          "Ciencias Naturales",
-          "Ciencias Sociales",
-          "Educación Física",
-          "Educación Artística",
-          "Inglés"
-        ]
-      },
-      "extracurriculares": {
-        "titulo": "Materias extracurriculares",
-        "intro": "El turno tarde permite que los niños y niñas realicen actividades orientadas al arte, las nuevas tecnologías, la lengua extranjera, el medio ambiente y el deporte.",
-        "items": [
-          {
-            "foto": "assets/fotos/ingles.jpg",
-            "titulo": "Academia de Inglés",
-            "texto": "La enseñanza del idioma es esencial en este mundo globalizado. Aprendemos inglés desde lo cotidiano, con un rol muy importante para la comunicación oral. Además, los niños rinden exámenes internacionales de la mano de PATH Examinations."
-          },
-          {
-            "foto": "assets/fotos/deportes.jpg",
-            "titulo": "Deportes",
-            "texto": "Los niños y niñas realizan básquet y fútbol como disciplinas deportivas, teniendo como marco el juego reglado, la competencia sana y el entrenamiento necesario para generar habilidades en cada deporte."
-          },
-          {
-            "foto": "assets/fotos/artes.jpg",
-            "titulo": "Artes",
-            "texto": "Las expresiones artísticas son tan diversas como las personas; por eso, durante el turno tarde se brindan los talleres de Creatividad."
-          },
-          {
-            "foto": "",
-            "titulo": "Robótica",
-            "texto": "Resolver problemas en situaciones cotidianas mediante el uso de la tecnología es el principal objetivo de este taller, que pone en juego la programación, la robótica y la impresión 3D."
-          }
-        ]
-      },
-      "informe": {
-        "titulo": "Cómo informamos los aprendizajes",
-        "intro": "Las familias reciben información sobre la trayectoria de su hijo o hija a lo largo de todo el año.",
-        "items": [
-          "Cada área define hasta tres objetivos por año, que se comunican al comienzo del ciclo.",
-          "Los objetivos no se ponderan entre sí: ninguna materia vale más que otra.",
-          "Al cierre del año se emite el RITE, el registro provincial de trayectoria educativa."
-        ]
-      }
+// ==========================================
+  // ARANCELES Y VALORES DE REFERENCIA
+  // ==========================================
+  aranceles: {
+    aviso: "Los valores expresados son de referencia y se actualizan mensualmente según las resoluciones y normativas arancelarias vigentes.",
+    primaria: {
+      titulo: "Nivel Primario (DIEGEP 8869)",
+      reservaVacante: "$450.000",
+      cuotaReferencia: "$450.000",
+      aclaracionCuota: "Valor cuota mensual de referencia. Sujeto a actualización mes a mes.",
+      conceptosIncluidos: [
+        "Jornada pedagógica correspondiente al plan oficial",
+        "Proyectos integrados de cultura digital, tecnología y arte",
+        "Seguro escolar y cobertura de emergencias médicas"
+      ]
     },
-    "secundaria": {
-      "nombre": "Nivel Secundario",
-      "diegep": "DIEGEP 9285",
-      "horario": {
-        "titulo": "Horario",
-        "destacado": "A completar: duración de la jornada del Nivel Secundario.",
-        "aclaracion": "A completar: qué incluye la jornada.",
-        "parrafos": [
-          "A completar: cómo se organiza el día en el Nivel Secundario."
-        ]
-      },
-      "curriculares": {
-        "titulo": "Materias curriculares",
-        "intro": "Las áreas obligatorias del Nivel Secundario.",
-        "lista": [
-          "Prácticas del Lenguaje",
-          "Matemática",
-          "Ciencias Naturales",
-          "Ciencias Sociales",
-          "Educación Física",
-          "Educación Artística",
-          "Inglés",
-          "Tecnología",
-          "Educación Emocional"
-        ]
-      },
-      "extracurriculares": {
-        "titulo": "Materias extracurriculares",
-        "intro": "A completar: propuesta extracurricular del Nivel Secundario.",
-        "items": []
-      },
-      "informe": {
-        "titulo": "Cómo informamos los aprendizajes",
-        "intro": "A completar: régimen de calificación e informes del Nivel Secundario.",
-        "items": [
-          "A completar."
-        ]
-      }
+    secundaria: {
+      titulo: "Nivel Secundario (DIEGEP 9285)",
+      reservaVacante: "$450.000",
+      cuotaReferencia: "$450.000",
+      aclaracionCuota: "Valor cuota mensual de referencia. Sujeto a actualización mes a mes.",
+      conceptosIncluidos: [
+        "Plan de estudios oficial de Educación Secundaria",
+        "Talleres de innovación, robótica y formación técnica orientada",
+        "Seguro escolar y cobertura de emergencias médicas"
+      ]
+    },
+    condicionesPago: [
+      "El arancel vence del 1 al 10 de cada mes.",
+      "Medios habilitados: Débito automático, transferencia bancaria y plataformas digitales.",
+      "Descuentos por hermanos aplicables sobre el arancel base."
+    ]
+  },
+
+  // ==========================================
+  // UNIFORMES REGLAMENTARIOS
+  // ==========================================
+  uniformes: {
+    primaria: {
+      titulo: "Uniforme Nivel Primario",
+      diario: [
+        "Chomba blanca o azul institucional con escudo del Colegio",
+        "Pantalón escolar azul marino / pollera pantalón reglamentaria",
+        "Buzo o campera institucional con escudo",
+        "Zapatillas escolares negras o blancas"
+      ],
+      educacionFisica: [
+        "Remera deportiva institucional de Primaria",
+        "Pantalón de jogger / short azul marino del Colegio",
+        "Zapatillas deportivas adecuadas para actividad física"
+      ],
+      observaciones: "Todas las prendas deben estar claramente identificadas con nombre y apellido del estudiante."
+    },
+    secundaria: {
+      titulo: "Uniforme Nivel Secundario",
+      diario: [
+        "Chomba institucional distintiva de Nivel Secundario",
+        "Pantalón azul marino o negro reglamentario (corte recto)",
+        "Buzo o campera institucional de Secundaria",
+        "Calzado cerrado cómodo o zapatillas discretas"
+      ],
+      educacionFisica: [
+        "Remera técnica institucional de Secundaria",
+        "Pantalón de gimnasia / jogger azul marino o negro",
+        "Calzado deportivo apto para educación física y deportes"
+      ],
+      observaciones: "Prendas debidamente rotuladas. Para actividades de laboratorio o taller técnico se indicarán elementos de protección específicos."
     }
   },
-  "comedor": {
-    "titulo": "Comedor escolar",
-    "intro": "El comedor transcurre de 12 a 12:45hs, entre la jornada curricular del turno mañana y las materias extracurriculares del turno tarde. Los niños y niñas pueden:",
-    "items": [
-      "Traer su vianda al ingresar a la escuela, que será servida caliente al momento del almuerzo.",
-      "Adquirir el servicio de vianda escolar que ofrece el kiosco de la escuela."
-    ]
-  },
-  "uniforme": {
-    "titulo": "Uniforme escolar",
-    "texto": "El uniforme forma parte de nuestra identidad como escuela, además de ser de excelente calidad, con un diseño moderno y cómodo para que los niños y niñas realicen actividades escolares.",
-    "fotos": [
-      "assets/fotos/uniforme-1.jpg",
-      "assets/fotos/uniforme-2.jpg"
-    ],
-    "prendas": [
-      "Chomba",
-      "Pantalón",
-      "Campera",
-      "Buzo",
-      "Remera",
-      "Bermuda"
-    ]
-  },
-  "materiales": {
-    "titulo": "Materiales escolares",
-    "parrafos": [
-      "Los materiales escolares forman parte de la actividad cotidiana de aprendizaje."
-    ],
-    "aviso": "La compra de dichos materiales es una responsabilidad de las familias y su adquisición es obligatoria."
-  },
-  "valores": {
-    "titulo": "Valores",
-    "intro": [
-      "El precio mensual del servicio es único e incluye la jornada del turno mañana y del turno tarde, de 8 a 15hs.",
-      "Todos los valores expresados son mensuales, con vencimiento el día 10 de cada mes."
-    ],
-    "puntos": [
-      "Se abona una cuota de inscripción similar al valor de la cuota actual.",
-      "No se abona cuota doble, cuota de mantenimiento ni cuota aguinaldo.",
-      "Se abonan 11 cuotas consecutivas, de febrero a diciembre.",
-      "Las familias que ingresan por primera vez abonan por adelantado la inscripción en concepto de reserva de vacante."
-    ],
-    "aviso": "Dentro del valor mensual no están incluidos el comedor escolar, el material didáctico (libros, impresiones, útiles escolares) ni el uniforme escolar. Consultá por descuentos por pagos adelantados.",
-    "beneficioTitulo": "Beneficio por pago en término",
-    "beneficioTexto": "Las familias que abonan la cuota mensual dentro del vencimiento, del 1 al 10 de cada mes, tienen bonificado un porcentaje de la inscripción para el año siguiente."
-  },
-  "pagos": {
-    "titulo": "Medios de pago",
-    "items": [
-      "Transferencia o depósito en cuenta bancaria, enviando el comprobante de la operación.",
-      "Efectivo en la escuela."
-    ]
-  },
-  "docs": {
-    "titulo": "Documentación a presentar",
-    "items": [
-      "DNI del niño/a actualizado",
-      "Partida de nacimiento del niño/a",
-      "DNI de madre/padre",
-      "Servicio a nombre de madre/padre",
-      "Copia del recibo de sueldo de madre/padre",
-      "DNI de adultos autorizados para retirar al niño/a",
-      "Libreta de vacunas obligatorias y carnet de obra social",
-      "Ficha de salud",
-      "Constancia de alumno regular de Nivel Inicial o Nivel Primario, según corresponda",
-      "Boletín o RITE de calificaciones de Nivel Primario, o último informe del Nivel Inicial",
-      "Libre deuda, si proviene de una escuela privada",
-      "Legajo completo del estudiante, una vez emitido el pase escolar",
-      "Autorización de uso de imagen",
-      "Formulario de preinscripción",
-      "Contrato de servicio educativo"
-    ]
-  },
-  "inscripcion": {
-    "titulo": "¿Cómo inscribir?",
-    "intro": "Las familias interesadas en inscribir a su hijo o hija siguen estos pasos:",
-    "pasos": [
-      "Comunicarse por cualquiera de nuestros canales de contacto y solicitar una entrevista virtual.",
-      "Una vez realizada la entrevista, visitar la escuela de forma presencial y completar el formulario de inscripción.",
-      "Presentar la documentación correspondiente del niño/a y abonar la reserva de vacante.",
-      "Con la documentación y el formulario completos, se procede a la inscripción definitiva del estudiante."
-    ]
-  },
-  "contacto": {
-    "titulo": "Contacto",
-    "direccion": "Las Magnolias 2546, esquina Orquídeas",
-    "email": "inscripciones@santotomas.ar",
-    "telefono": "0348 4422797",
-    "whatsapp": "+54 3484 311457",
-    "web": "www.santotomas.ar",
-    "instagram": "escuelasantotomas.escobar",
-    "facebook": "santotomas.escobar"
-  },
-  "verano": {
-    "titulo": "Talleres de verano",
-    "mes": "Febrero 2027",
-    "actividades": [
-      "Ludoteca",
-      "Manualidades",
-      "Deportes",
-      "Actividades recreativas"
-    ],
-    "horario": "9 a 12hs",
-    "nota": "Para todas las edades"
-  },
-  "galeria": {
-    "titulo": "La escuela por dentro",
-    "intro": "Momentos de la vida cotidiana en el Santo Tomás.",
-    "fotos": [
-      "assets/fotos/galeria-1.jpg",
-      "assets/fotos/galeria-2.jpg",
-      "assets/fotos/galeria-3.jpg",
-      "assets/fotos/galeria-4.jpg"
-    ]
-  },
-  "cierre": {
-    "frase": "Lo esencial es invisible a los ojos",
-    "autor": "Antoine de Saint-Exupéry"
-  }
-};
