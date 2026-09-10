@@ -428,12 +428,19 @@ function guardar(){
    Solo se aceptan claves que el archivo conoce: así una copia guardada vieja
    no puede revivir secciones eliminadas ni pisar bloques enteros. */
 function combinar(base, guardado){
-  if(Array.isArray(base) || typeof base !== "object" || base === null){
-    return guardado !== undefined ? guardado : base;
+  if(guardado === undefined) return base;
+  if(Array.isArray(base)){
+    // Igual que con los objetos: cada elemento hereda los campos nuevos que
+    // el archivo agregó (como una foto) aunque la copia guardada sea vieja.
+    // La cantidad de elementos la decide lo guardado, para respetar los que
+    // el usuario agregó o quitó con los botones + y ×.
+    if(!Array.isArray(guardado)) return guardado;
+    return guardado.map((item, i) => i < base.length ? combinar(base[i], item) : item);
   }
+  if(typeof base !== "object" || base === null) return guardado;
   const salida = {};
   for(const clave of Object.keys(base)){
-    salida[clave] = guardado && clave in guardado
+    salida[clave] = clave in guardado
       ? combinar(base[clave], guardado[clave])
       : base[clave];
   }

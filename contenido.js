@@ -229,6 +229,7 @@ const BASE = {
         "vigencia": "Valor vigente a septiembre de 2026."
       },
       "horario": {
+        "foto": "assets/fotos/jornada-secundaria.jpg",
         "titulo": "Horario",
         "destacado": "A completar: duración de la jornada del Nivel Secundario.",
         "aclaracion": "A completar: qué incluye la jornada.",
