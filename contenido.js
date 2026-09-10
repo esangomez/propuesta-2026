@@ -35,14 +35,17 @@ const BASE = {
     "titulo": "Las tres calidades",
     "items": [
       {
+        "foto": "assets/fotos/calidad-humana.jpg",
         "titulo": "La calidad humana",
         "texto": "El desarrollo del estudiante no es solo académico: también es emocional, social, ético y ciudadano. Cuidamos el clima de convivencia, prevenimos el acoso escolar y sostenemos el bienestar de estudiantes y docentes."
       },
       {
+        "foto": "assets/fotos/calidad-aprendizajes.jpg",
         "titulo": "La calidad de los aprendizajes",
         "texto": "Miramos los resultados, pero también los procesos: la eficacia de los métodos de enseñanza, la evaluación formativa, y el desarrollo del pensamiento crítico, la resolución de problemas, la creatividad y la colaboración."
       },
       {
+        "foto": "assets/fotos/calidad-recursos.jpg",
         "titulo": "La calidad de los recursos",
         "texto": "La selección, la formación y el bienestar del equipo docente, la infraestructura y las herramientas digitales son las que sostienen todo lo anterior."
       }
@@ -128,6 +131,12 @@ const BASE = {
     "primaria": {
       "nombre": "Nivel Primario",
       "diegep": "DIEGEP 8869",
+      "arancel": {
+        "rotulo": "Cuota mensual",
+        "monto": "$441.000",
+        "leyenda": "Jornada completa de 8 a 15hs: turno mañana y turno tarde.",
+        "vigencia": "Valor vigente a septiembre de 2026."
+      },
       "horario": {
         "foto": "assets/fotos/jornada.jpg",
         "titulo": "Horario",
@@ -192,11 +201,33 @@ const BASE = {
           "Los objetivos no se ponderan entre sí: ninguna materia vale más que otra.",
           "Al cierre del año se emite el RITE, el registro provincial de trayectoria educativa."
         ]
+      },
+      "uniforme": {
+        "titulo": "Uniforme escolar",
+        "texto": "El uniforme forma parte de nuestra identidad como escuela, además de ser de excelente calidad, con un diseño moderno y cómodo para que los niños y niñas realicen actividades escolares.",
+        "fotos": [
+          "assets/fotos/uniforme-1.jpg",
+          "assets/fotos/uniforme-2.jpg"
+        ],
+        "prendas": [
+          "Chomba",
+          "Pantalón",
+          "Campera",
+          "Buzo",
+          "Remera",
+          "Bermuda"
+        ]
       }
     },
     "secundaria": {
       "nombre": "Nivel Secundario",
       "diegep": "DIEGEP 9285",
+      "arancel": {
+        "rotulo": "Cuota mensual",
+        "monto": "$459.000",
+        "leyenda": "A completar: qué incluye la cuota del Nivel Secundario.",
+        "vigencia": "Valor vigente a septiembre de 2026."
+      },
       "horario": {
         "titulo": "Horario",
         "destacado": "A completar: duración de la jornada del Nivel Secundario.",
@@ -231,6 +262,19 @@ const BASE = {
         "items": [
           "A completar."
         ]
+      },
+      "uniforme": {
+        "titulo": "Uniforme escolar",
+        "texto": "El uniforme forma parte de nuestra identidad como escuela, además de ser de excelente calidad, con un diseño moderno y cómodo para que los niños y niñas realicen actividades escolares.",
+        "fotos": [],
+        "prendas": [
+          "Chomba",
+          "Pantalón",
+          "Campera",
+          "Buzo",
+          "Remera",
+          "Bermuda"
+        ]
       }
     }
   },
@@ -240,22 +284,6 @@ const BASE = {
     "items": [
       "Traer su vianda al ingresar a la escuela, que será servida caliente al momento del almuerzo.",
       "Adquirir el servicio de vianda escolar que ofrece el kiosco de la escuela."
-    ]
-  },
-  "uniforme": {
-    "titulo": "Uniforme escolar",
-    "texto": "El uniforme forma parte de nuestra identidad como escuela, además de ser de excelente calidad, con un diseño moderno y cómodo para que los niños y niñas realicen actividades escolares.",
-    "fotos": [
-      "assets/fotos/uniforme-1.jpg",
-      "assets/fotos/uniforme-2.jpg"
-    ],
-    "prendas": [
-      "Chomba",
-      "Pantalón",
-      "Campera",
-      "Buzo",
-      "Remera",
-      "Bermuda"
     ]
   },
   "materiales": {
@@ -269,7 +297,7 @@ const BASE = {
   "valores": {
     "titulo": "Valores",
     "intro": [
-      "El precio mensual del servicio es único e incluye la jornada del turno mañana y del turno tarde, de 8 a 15hs.",
+      "El precio mensual del servicio es único por nivel e incluye la jornada del turno mañana y del turno tarde.",
       "Todos los valores expresados son mensuales, con vencimiento el día 10 de cada mes. Si el estudiante asiste solamente a la jornada obligatoria, de 8 a 12hs, abona el mismo arancel."
     ],
     "puntos": [
