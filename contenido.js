@@ -212,8 +212,7 @@ const BASE = {
         "titulo": "Uniforme escolar",
         "texto": "El uniforme forma parte de nuestra identidad como escuela, además de ser de excelente calidad, con un diseño moderno y cómodo para que los niños y niñas realicen actividades escolares.",
         "fotos": [
-          "assets/fotos/uniforme-1.jpg",
-          "assets/fotos/uniforme-2.jpg"
+          "assets/fotos/uniforme-primaria-3.jpg"
         ],
         "prendas": [
           "Chomba",
@@ -279,7 +278,9 @@ const BASE = {
       "uniforme": {
         "titulo": "Uniforme escolar",
         "texto": "El uniforme forma parte de nuestra identidad como escuela, además de ser de excelente calidad, con un diseño moderno y cómodo para que los niños y niñas realicen actividades escolares.",
-        "fotos": [],
+        "fotos": [
+          "assets/fotos/uniforme-secundaria-1.jpg"
+        ],
         "prendas": [
           "Chomba",
           "Pantalón",
