@@ -88,6 +88,20 @@ Los aranceles están en `niveles` → `primaria` (o `secundaria`) → `arancel`.
 Son cuatro líneas: el rótulo, el monto, qué incluye y desde cuándo rige.
 Cuando cambien los valores, actualizá también la línea `vigencia`.
 
+## Logos de plataformas
+
+La sección Comunicación y la sección Recursos muestran el logo de las
+plataformas que usa el colegio: Handing, Google Workspace, Smart Team, PATH
+Examinations, Kapelusz y Aprendo Leyendo. Esos archivos todavía no están
+cargados — hoy se ven solo el nombre, sin ícono, porque el diseño está armado
+para no romperse mientras faltan.
+
+Para agregarlos: **Editar**, y sobre cada nombre aparece un botón **Agregar
+logo**. Sirve un PNG con fondo transparente, del sitio oficial de cada marca.
+Subilo igual que una foto, o pegá un enlace si ya está publicado en algún
+lado. El logo se ve chico — no hace falta alta resolución, con 200×200 px
+alcanza de sobra.
+
 ## Aplicación del manual de marca
 
 ### Paleta corporativa

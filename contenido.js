@@ -100,6 +100,28 @@ const BASE = {
         "titulo": "Para experimentar",
         "texto": "Microscopio digital, huerta escolar y elementos de educación física."
       }
+    ],
+    "plataformas": [
+      {
+        "nombre": "Google Workspace",
+        "logo": "assets/logos/google-workspace.png"
+      },
+      {
+        "nombre": "Smart Team",
+        "logo": "assets/logos/smart-team.png"
+      },
+      {
+        "nombre": "PATH Examinations",
+        "logo": "assets/logos/path-examinations.png"
+      },
+      {
+        "nombre": "Kapelusz",
+        "logo": "assets/logos/kapelusz.png"
+      },
+      {
+        "nombre": "Aprendo Leyendo",
+        "logo": "assets/logos/aprendo-leyendo.png"
+      }
     ]
   },
   "equipo": {
@@ -183,21 +205,7 @@ const BASE = {
             "foto": "assets/fotos/robotica.jpg",
             "titulo": "Informática y Robótica",
             "texto": "Resolver problemas en situaciones cotidianas mediante el uso de la tecnología es el principal objetivo de este taller, que pone en juego la programación, la robótica y la impresión 3D."
-          },
-          {
-            "foto": "assets/fotos/huerta.jpg",
-            "titulo": "Huerta",
-            "texto": "Los recursos naturales son parte fundamental de nuestra vida: los niños y niñas realizan producción de alimentos por medio de la huerta escolar."
           }
-        ]
-      },
-      "informe": {
-        "titulo": "Cómo informamos los aprendizajes",
-        "intro": "Las familias reciben información sobre la trayectoria de su hijo o hija a lo largo de todo el año.",
-        "items": [
-          "Cada área define hasta tres objetivos por año, que se comunican al comienzo del ciclo.",
-          "Los objetivos no se ponderan entre sí: ninguna materia vale más que otra.",
-          "Al cierre del año se emite el RITE, el registro provincial de trayectoria educativa."
         ]
       },
       "uniforme": {
@@ -214,6 +222,19 @@ const BASE = {
           "Buzo",
           "Remera",
           "Bermuda"
+        ]
+      },
+      "comunicacion": {
+        "titulo": "Comunicación",
+        "intro": "Nos comunicamos con las familias a través de Handing, la plataforma institucional donde se envían comunicados, autorizaciones y la información sobre la trayectoria de cada estudiante.",
+        "plataforma": {
+          "nombre": "Handing",
+          "logo": "assets/logos/handing.png"
+        },
+        "items": [
+          "Cada área define hasta tres objetivos por año, que se comunican al comienzo del ciclo.",
+          "Los objetivos no se ponderan entre sí: ninguna materia vale más que otra.",
+          "Al cierre del año se emite el RITE, el registro provincial de trayectoria educativa."
         ]
       }
     },
@@ -255,13 +276,6 @@ const BASE = {
         "intro": "A completar: propuesta extracurricular del Nivel Secundario.",
         "items": []
       },
-      "informe": {
-        "titulo": "Cómo informamos los aprendizajes",
-        "intro": "A completar: régimen de calificación e informes del Nivel Secundario.",
-        "items": [
-          "A completar."
-        ]
-      },
       "uniforme": {
         "titulo": "Uniforme escolar",
         "texto": "El uniforme forma parte de nuestra identidad como escuela, además de ser de excelente calidad, con un diseño moderno y cómodo para que los niños y niñas realicen actividades escolares.",
@@ -273,6 +287,17 @@ const BASE = {
           "Buzo",
           "Remera",
           "Bermuda"
+        ]
+      },
+      "comunicacion": {
+        "titulo": "Comunicación",
+        "intro": "Nos comunicamos con las familias a través de Handing, la plataforma institucional donde se envían comunicados, autorizaciones y la información sobre la trayectoria de cada estudiante.",
+        "plataforma": {
+          "nombre": "Handing",
+          "logo": "assets/logos/handing.png"
+        },
+        "items": [
+          "A completar."
         ]
       }
     }

@@ -283,6 +283,31 @@ p{margin:0 0 12px; max-width:60ch}
 .item.con-foto{flex-direction:column; gap:0}
 .item.con-foto .cuerpo{width:100%}
 
+
+/* ==========================================================
+   Insignias con logo
+   Para identificar una plataforma o un material (Handing,
+   Google Workspace, etc.). Si el logo todavía no se cargó, el
+   onerror lo oculta solo y queda el nombre en texto: la página
+   nunca muestra un ícono roto.
+   ========================================================== */
+.insignias{display:flex; flex-wrap:wrap; gap:10px; margin:4px 0 4px}
+.insignia{
+  display:flex; align-items:center; gap:10px; background:#fff;
+  border:1.5px solid var(--linea); border-radius:14px; padding:10px 14px;
+  position:relative;
+}
+.insignia img{width:28px; height:28px; object-fit:contain; flex:0 0 auto}
+.insignia span{font-weight:700; font-size:14.5px}
+.insignia .quitar{position:static; margin-left:2px}
+.insignia .fila-edit{margin:0; position:absolute; left:0; right:0; top:100%; z-index:5; background:#fff; border:1.5px solid var(--linea); border-radius:10px; padding:6px; box-shadow:0 6px 16px rgba(36,31,34,.12)}
+.plataforma-destacada{
+  display:flex; align-items:center; gap:14px; background:#fff; border:1.5px solid var(--linea);
+  border-radius:var(--radio); padding:16px 18px; margin:0 0 18px;
+}
+.plataforma-destacada img{width:52px; height:52px; object-fit:contain; flex:0 0 auto}
+.plataforma-destacada b{display:block; font-size:17px}
+
 /* ==========================================================
    Pantallas medianas y grandes
    El celular es la base; acá el contenido se reparte a lo ancho
@@ -468,6 +493,18 @@ const fichas     = (ruta, arr) => `<div class="grilla">` + arr.map((_,i)=>{
 
 
 /* un marco de foto: muestra la imagen y, en modo edición, deja cambiarla */
+/* insignia con logo: igual que marco() pero pensada para un ícono
+   chico junto a un nombre, con caída elegante si falta el archivo */
+function insignia(rutaLogo, rutaNombre, quitable=null){
+  const src = leer(rutaLogo);
+  const img = src ? `<img src="${esc(src)}" alt="" loading="lazy" onerror="this.remove()">` : "";
+  const acciones = editando ? `<div class="fila-edit" style="display:flex">
+      <button class="mini" data-subir="${rutaLogo}">${src?"Cambiar logo":"Agregar logo"}</button>
+      <button class="mini" data-urlfoto="${rutaLogo}">Enlace</button>
+    </div>` : "";
+  return `<span class="insignia">${img}${ed(rutaNombre,"span")}${quitable!=null?quitarBtn(quitable[0],quitable[1]):""}${acciones}</span>`;
+}
+
 function marco(ruta, clase="", borrable=true){
   const src = leer(ruta);
   if(!src && !editando) return "";
@@ -579,11 +616,18 @@ function render(){
     </div>
   </section>
 
-  <section class="tinte" id="s-informe" style="--acento:var(--verde)">
-    <h2>${ed(rn+".informe.titulo")}</h2><div class="subrayado"></div>
-    ${ed(rn+".informe.intro","p","entrada")}
-    ${puntos(rn+".informe.items", n.informe.items)}
-    ${agregarBtn(rn+".informe.items","punto")}
+  <section class="tinte" id="s-comunicacion" style="--acento:var(--verde)">
+    <h2>${ed(rn+".comunicacion.titulo")}</h2><div class="subrayado"></div>
+    ${ed(rn+".comunicacion.intro","p","entrada")}
+    <div class="plataforma-destacada">
+      ${(()=>{const src=leer(rn+".comunicacion.plataforma.logo");return src?`<img src="${esc(src)}" alt="" onerror="this.remove()">`:"";})()}
+      <div>
+        <b>${ed(rn+".comunicacion.plataforma.nombre")}</b>
+        ${editando?`<div class="fila-edit" style="display:flex"><button class="mini" data-subir="${rn}.comunicacion.plataforma.logo">Cambiar logo</button><button class="mini" data-urlfoto="${rn}.comunicacion.plataforma.logo">Enlace</button></div>`:""}
+      </div>
+    </div>
+    ${puntos(rn+".comunicacion.items", n.comunicacion.items)}
+    ${agregarBtn(rn+".comunicacion.items","punto")}
   </section>
 
   <section id="s-recursos" style="--acento:var(--naranja)">
@@ -591,6 +635,11 @@ function render(){
     ${ed("recursos.intro","p","entrada")}
     ${fichas("recursos.items", d.recursos.items)}
     ${agregarBtn("recursos.items","recurso")}
+    <h3 style="margin-top:22px">Plataformas y materiales que usamos</h3>
+    <div class="insignias">
+      ${d.recursos.plataformas.map((_,i)=>insignia("recursos.plataformas."+i+".logo", "recursos.plataformas."+i+".nombre", ["recursos.plataformas",i])).join("")}
+    </div>
+    ${agregarBtn("recursos.plataformas","plataforma")}
   </section>`;
 
   const utiles = `
@@ -690,7 +739,7 @@ function render(){
 
   $("#app").innerHTML = portada + cita + escuela + selector + jornada + utiles + aranceles + contacto + galeria + cierre;
   $("#marcaTop").innerHTML = "<b>" + esc(d.escuela) + "</b><span>" + esc(d.titulo) + " " + esc(d.anio) + "</span>";
-  $("#nav").innerHTML = [["s-escuela","La escuela"],["s-pedagogia","Cómo enseñamos"],["s-equipo","Equipo"],["s-niveles","Niveles"],["s-jornada","Jornada"],["s-materias","Materias"],["s-informe","Informes"],["s-recursos","Recursos"],["s-utiles","Uniforme"],["s-aranceles","Aranceles"],["s-docs","Documentación"],["s-inscripcion","Inscripción"],["s-galeria","Fotos"],["s-verano","Verano"]]
+  $("#nav").innerHTML = [["s-escuela","La escuela"],["s-pedagogia","Cómo enseñamos"],["s-equipo","Equipo"],["s-niveles","Niveles"],["s-jornada","Jornada"],["s-materias","Materias"],["s-comunicacion","Comunicación"],["s-recursos","Recursos"],["s-utiles","Uniforme"],["s-aranceles","Aranceles"],["s-docs","Documentación"],["s-inscripcion","Inscripción"],["s-galeria","Fotos"],["s-verano","Verano"]]
     .map(([id,t])=>`<a href="#${id}">${t}</a>`).join("");
 }
 
