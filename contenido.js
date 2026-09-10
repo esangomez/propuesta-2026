@@ -212,7 +212,8 @@ const BASE = {
         "titulo": "Uniforme escolar",
         "texto": "El uniforme forma parte de nuestra identidad como escuela, además de ser de excelente calidad, con un diseño moderno y cómodo para que los niños y niñas realicen actividades escolares.",
         "fotos": [
-          "assets/fotos/uniforme-primaria-3.jpg"
+          "assets/fotos/uniforme-primaria-3.jpg",
+          "assets/fotos/uniforme-primaria-4.jpg"
         ],
         "prendas": [
           "Chomba",
@@ -379,7 +380,7 @@ const BASE = {
     "telefono": "0348 4422797",
     "whatsapp": "+54 3484 311457",
     "web": "www.santotomas.ar",
-    "instagram": "escuelasantotomas.escobar",
+    "instagram": "colegiosantotomas.escobar",
     "facebook": "santotomas.escobar"
   },
   "verano": {
@@ -393,16 +394,6 @@ const BASE = {
     ],
     "horario": "9 a 12hs",
     "nota": "Para todas las edades"
-  },
-  "galeria": {
-    "titulo": "La escuela por dentro",
-    "intro": "Momentos de la vida cotidiana en el Santo Tomás.",
-    "fotos": [
-      "assets/fotos/galeria-1.jpg",
-      "assets/fotos/galeria-2.jpg",
-      "assets/fotos/galeria-3.jpg",
-      "assets/fotos/galeria-4.jpg"
-    ]
   },
   "cierre": {
     "frase": "Lo esencial es invisible a los ojos",
